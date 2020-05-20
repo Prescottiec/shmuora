@@ -34,5 +34,6 @@
   "bugs": {
     "url": "https://github.com/Prescottiec/shmuora/issues"
   },
-  "homepage": "https://github.com/Prescottiec/shmuora#readme"
+  "homepage": "https://github.com/Prescottiec/shmuora#readme",
+  "devDependencies": {}
 }
