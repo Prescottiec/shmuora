@@ -8,8 +8,9 @@ class SessionForm extends React.Component {
       email: "",
       password: "",
     };
-    this.handleLogin = this.handleLogin.bind(this);
-    this.handleSignup= this.handleSignup.bind(this);
+    // this.handleLogin = this.handleLogin.bind(this);
+    // this.handleSignup= this.handleSignup.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   update(field) {
