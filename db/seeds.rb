@@ -8,7 +8,7 @@
 
 User.destroy_all
 
-User.create!(
+u1 = User.create!(
   username: 'Demo_User',
   email: 'demo_user@demo.com',
   password: '123456'
