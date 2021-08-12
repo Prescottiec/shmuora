@@ -1,6 +1,7 @@
-.login-page {
+.user-auth-container {
     display: flex;
     background-image: asset-url("login.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     justify-content: center;
