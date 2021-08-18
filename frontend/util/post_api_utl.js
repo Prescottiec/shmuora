@@ -8,7 +8,7 @@ export const fetchPosts = () => (
 export const fetchPost = (postId) => (
     $.ajax({
         method: 'GET',
-        url: `/api/tracks/${postId}`,
+        url: `/api/posts/${postId}`,
         data: { postId }
     })
 )
