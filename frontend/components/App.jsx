@@ -19,6 +19,7 @@ const App = () => (
       <GreetingContainer />
     </header>
     <Switch>
+      <ProtectedRoute exact path="/posts/:postId" component={PostShowContainer} />
       <AuthRoute exact path="/" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />
     </Switch>
