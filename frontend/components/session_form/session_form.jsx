@@ -110,8 +110,7 @@ class SessionForm extends React.Component {
               </div>
 
               <div className="signup">
-                <form onSubmit={this.handleSignup}>
-                </form>
+                <form onSubmit={this.handleSignup}></form>
               </div>
             </div>
           </div>
