@@ -1,15 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Greeting = ({ currentUser, logout }) => {
+const Navlink = ({ currentUser, logout }) => {
   const sessionLinks = () => (
     <nav className="login-signup">
-      <Link to="/">Login</Link>
+      {/* <Link to="/">Login</Link>
       &nbsp;or&nbsp;
-      <Link to="/signup">Sign up!</Link>
+      <Link to="/signup">Sign up!</Link> */}
     </nav>
   );
-  const personalGreeting = () => (
+  const personalNavLink = () => (
     <hgroup className="header-group">
       <h2 className="header-name">Hi, {currentUser.username}!</h2>
       <button className="header-button" onClick={logout}>
@@ -18,7 +18,7 @@ const Greeting = ({ currentUser, logout }) => {
     </hgroup>
   );
 
-  return currentUser ? personalGreeting() : sessionLinks();
+  return currentUser ? personalNavLink() : sessionLinks();
 };
 
-export default Greeting;
+export default NavLink;
