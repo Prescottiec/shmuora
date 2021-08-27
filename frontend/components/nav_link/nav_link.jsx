@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Navlink = ({ currentUser, logout }) => {
+const NavLink = ({ currentUser, logout }) => {
   const sessionLinks = () => (
     <nav className="login-signup">
       {/* <Link to="/">Login</Link>

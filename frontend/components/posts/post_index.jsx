@@ -1,5 +1,6 @@
 import React from 'react';
 import PostIndexItem from "./post_index_item";
+import { Link } from "react-router-dom";
 
 class PostIndex extends React.Component {
     constructor(props) {
@@ -15,6 +16,7 @@ class PostIndex extends React.Component {
         console.log(posts);
         return(
             <div>
+                <Link to="/posts/new">Create a post!</Link>
                 <div>
                     {
                         posts.map(post => (

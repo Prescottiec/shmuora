@@ -10,10 +10,11 @@ class Api::PostsController < ApplicationController
         if @post.save
             render :show
         else
-            render json: @post.error.full_messages, status: 422
+            render json: @post.errors.full_messages, status: 422
         end
     end
 
+    # thunk actions debug it post_actions
     def show
         @post = Post.find(params[:id])
         if @post
@@ -28,7 +29,7 @@ class Api::PostsController < ApplicationController
         if @post.update(post_params) && @post.user_id == current_user.id
             render :show
         else
-            render json: @post.error.full_messages, status: 422
+            render json: @post.errors.full_messages, status: 422
         end
     end
 
@@ -37,13 +38,13 @@ class Api::PostsController < ApplicationController
         if @post.user_id == current_user.id
             @post.destroy
         else
-            render json: @post.error.full_messages, status: 422
+            render json: @post.errors.full_messages, status: 422
         end
     end
 
     private
     def post_params
-        params.require(:post).permit(:title, :user_id)
+        params.require(:post).permit(:title, :body)
     end
 
 end
