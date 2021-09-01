@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { fetchPost, updatePost, createPost } from "../../util/post_api_util";
+import { fetchPost, updatePost, createPost } from "../../actions/post_actions";
 import PostForm from "./post_form";
 
 const mapStateToProps = (state, ownProps) => {

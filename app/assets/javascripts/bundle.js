@@ -447,12 +447,16 @@ var PostForm = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
+      var _this2 = this;
+
       e.preventDefault();
 
       if (this.props.isEdit) {
         this.props.updatePost(this.state);
       } else {
-        this.props.createPost(this.state);
+        this.props.createPost(this.state).then(function () {
+          _this2.props.history.push("/posts");
+        });
       }
 
       ;
@@ -460,10 +464,10 @@ var PostForm = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleUpdate",
     value: function handleUpdate(type) {
-      var _this2 = this;
+      var _this3 = this;
 
       return function (e) {
-        _this2.setState(_defineProperty({}, type, e.currentTarget.value));
+        _this3.setState(_defineProperty({}, type, e.currentTarget.value));
       };
     }
   }, {
@@ -506,7 +510,7 @@ var PostForm = /*#__PURE__*/function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _util_post_api_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../util/post_api_util */ "./frontend/util/post_api_util.js");
+/* harmony import */ var _actions_post_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/post_actions */ "./frontend/actions/post_actions.js");
 /* harmony import */ var _post_form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./post_form */ "./frontend/components/posts/post_form.jsx");
 
 
@@ -539,13 +543,13 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     fetchPost: function fetchPost(postId) {
-      return dispatch(Object(_util_post_api_util__WEBPACK_IMPORTED_MODULE_2__["fetchPost"])(postId));
+      return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_2__["fetchPost"])(postId));
     },
     createPost: function createPost(post) {
-      return dispatch(Object(_util_post_api_util__WEBPACK_IMPORTED_MODULE_2__["createPost"])(post));
+      return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_2__["createPost"])(post));
     },
     updatePost: function updatePost(post) {
-      return dispatch(Object(_util_post_api_util__WEBPACK_IMPORTED_MODULE_2__["updatePost"])(post));
+      return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_2__["updatePost"])(post));
     }
   };
 };
@@ -781,7 +785,7 @@ var mapStateToProps = function mapStateToProps(_ref) {
   var errors = _ref.errors;
   return {
     errors: errors.session,
-    formType: "login" // navLink: <Link to="/signup">sign up instead</Link>,
+    formType: "Login" // navLink: <Link to="/signup">sign up instead</Link>,
 
   };
 };
@@ -1397,7 +1401,7 @@ var Protected = function Protected(_ref2) {
     exact: exact,
     render: function render(props) {
       return loggedIn ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Component, props) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Redirect"], {
-        to: "/login"
+        to: "/"
       });
     }
   });
