@@ -1,4 +1,5 @@
 import { connect } from "react-redux";
+import React from "react";
 
 import { logout } from "../../actions/session_actions";
 import NavLink from "./nav_link";
