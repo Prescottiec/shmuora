@@ -59,7 +59,7 @@ class SessionForm extends React.Component {
     return (
       <div className="login-page">
         <div className="user-auth-container">
-          <div className="projectLogo" />
+          <h1 className="projectLogo">Shmuora</h1>
           <h2 className="tagline">
             Where questions are asked, answered, and edited by users. A place to
             share knowledge and better understand the world.
@@ -68,7 +68,6 @@ class SessionForm extends React.Component {
             <div className="signUpLogin">
               <div className="login">
                 <form onSubmit={this.handleLogin} className="login-form-box">
-                  Welcome to Shmuora!
                   <br />
                   {/* Please {this.props.formType} or {this.props.navLink} */}
                   {this.renderErrors()}
