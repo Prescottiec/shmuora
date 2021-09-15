@@ -1,5 +1,4 @@
 import React from 'react';
-// import PostShow from "./post_show";
 import { Link } from "react-router-dom";
 
 class PostShow extends React.Component {
@@ -17,16 +16,9 @@ class PostShow extends React.Component {
         console.log(post);
         return(
             <div>
-                <Link to="/posts/new">Create a post!</Link>
-                <div>
-                    {
-                        posts.map(post => (
-                            <PostIndexItem
-                            post={post}
-                            key={`${post.id}`}/>
-                        ))
-                    }
-                </div>
+                <Link to="/posts/post/:postId">Click here to the post</Link>
+                {post.title}
+                {post.body}
             </div>
         )
     }
