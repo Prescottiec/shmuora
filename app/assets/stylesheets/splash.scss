@@ -25,11 +25,17 @@
 }
 
 .project-logo {
+    display: flex;
+    position: relative;
     font-size: 65px;
+    font-weight: bold;
     color: rgb(185, 43, 39);
     font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
-// .tagline {
-
-// }
+.tagline {
+    display: flex;
+    position: relative;
+    color: #636466;
+    font-weight: bold;
+}
