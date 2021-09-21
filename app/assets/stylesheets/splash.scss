@@ -26,8 +26,11 @@
 
 .project-logo {
     display: flex;
-    position: relative;
-    font-size: 65px;
+    justify-content: center;
+    text-align: center;
+    // align-items: flex-start;
+    // position: relative;
+    font-size: 60px;
     font-weight: bold;
     color: rgb(185, 43, 39);
     font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -36,6 +39,7 @@
 .tagline {
     display: flex;
     position: relative;
+    line-height: 1.0;
     color: #636466;
     font-weight: bold;
 }

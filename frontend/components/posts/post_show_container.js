@@ -1,10 +1,13 @@
 import { fetchPost } from "../../actions/post_actions"
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 import PostShow from "./post_show";
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
+    let postId = ownProps.match.params.postId;
     return {
-        post: Object.values(state.entities.post)
+        post: state.entities.posts[postId],
+        postId: postId
     };
 }
 
@@ -14,4 +17,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(PostShow);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PostShow));
