@@ -72,25 +72,28 @@ class SessionForm extends React.Component {
                   {this.renderErrors()}
                   <div className="login-form">
                     <br />
-                    <label>Username:</label>
+                    <label>Username</label>
                     <input
                       type="text"
+                      placeholder="Your Username"
                       value={this.state.username}
                       onChange={this.update("username")}
                       className="login-input"
                     />
                     <br />
-                    <label>Email:</label>
+                    <label>Email</label>
                     <input
                       type="email"
+                      placeholder="Your Email"
                       value={this.state.email}
                       onChange={this.update("email")}
                       className="login-input"
                     />
                     <br />
-                    <label>Password:</label>
+                    <label>Password</label>
                     <input
                         type="password"
+                        placeholder="Your Password"
                         value={this.state.password}
                         onChange={this.update("password")}
                         className="login-input"
@@ -108,7 +111,7 @@ class SessionForm extends React.Component {
               </div>
 
               <div className="signup">
-                <form onSubmit={this.handleSignup}></form>
+                {/* <form onSubmit={this.handleSignup}>Signup</form> */}
               </div>
             </div>
           </div>
