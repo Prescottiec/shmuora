@@ -1,0 +1,125 @@
+import React from "react";
+
+class LoginForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      username: "",
+      email: "",
+      password: "",
+    };
+    
+    // this.handleLogin = this.handleLogin.bind(this);
+    // this.handleSignup= this.handleSignup.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
+  }
+
+  update(field) {
+    return (e) =>
+      this.setState({
+        [field]: e.currentTarget.value,
+      });
+  }
+
+  // handleLogin(e) {
+  //   e.preventDefault();
+  //   this.props.login(this.state);
+  // }
+
+  // handleSignup(e) {
+  //   e.preventDefault();
+  //   this.props.signup(this.state);
+  // }
+
+    handleSubmit(e) {
+      e.preventDefault();
+      const user = Object.assign({}, this.state);
+      this.props.processForm(user);
+    }
+
+    handleDemo(e) {
+        e.preventDefault();
+        const demoUser = { username: 'Demo_User', email: 'demo@demo.com', password: '123456'};
+        this.props.processForm(demoUser);
+    }
+
+  renderErrors() {
+    return (
+      <div>
+        <ul>
+          {this.props.errors.map((error, i) => (
+            <li key={`error-${i}`}>{error}</li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
+
+  render() {
+    return (
+      <div className="login-page">
+        <div className="user-auth-container">
+          <h1 className="project-logo">Shmuora</h1>
+          <h2 className="tagline">
+            A place to share knowledge and better understand the world
+          </h2>
+          <div className="login-form-container">
+            <div className="signUpLogin">
+              <div className="login">
+                <form onSubmit={this.handleLogin} className="login-form-box">
+                  <br />
+                  {/* Please {this.props.formType} or {this.props.navLink} */}
+                  {this.renderErrors()}
+                  <div className="login-form">
+                    <br />
+                    <label>Username</label>
+                    <input
+                      type="text"
+                      placeholder="Your Username"
+                      value={this.state.username}
+                      onChange={this.update("username")}
+                      className="login-input"
+                    />
+                    <br />
+                    <label>Email</label>
+                    <input
+                      type="email"
+                      placeholder="Your Email"
+                      value={this.state.email}
+                      onChange={this.update("email")}
+                      className="login-input"
+                    />
+                    <br />
+                    <label>Password</label>
+                    <input
+                        type="password"
+                        placeholder="Your Password"
+                        value={this.state.password}
+                        onChange={this.update("password")}
+                        className="login-input"
+                    />
+                    <br />
+                    <input
+                      className="session-submit"
+                      type="submit"
+                      value={this.props.formType}
+                    />
+                    <button className="demo-user-button" onClick={this.handleDemo}>Demo User</button>
+                  </div>
+                  <div className="login-form-errors">{this.renderErrors()}</div>
+                </form>
+              </div>
+
+              <div className="signup">
+                {/* <form onSubmit={this.handleSignup}>Signup</form> */}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+export default LoginForm;
