@@ -15,6 +15,10 @@ class LoginForm extends React.Component {
     this.handleDemo = this.handleDemo.bind(this);
   }
 
+    componentDidMount(){
+        this.props.clearErrors();
+    }
+
   update(field) {
     return (e) =>
       this.setState({
@@ -111,9 +115,9 @@ class LoginForm extends React.Component {
                 </form>
               </div>
 
-              <div className="signup">
+              {/* <div className="signup"> */}
                 {/* <form onSubmit={this.handleSignup}>Signup</form> */}
-              </div>
+              {/* </div> */}
             </div>
           </div>
         </div>
