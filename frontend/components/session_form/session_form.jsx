@@ -9,46 +9,44 @@ class SessionForm extends React.Component {
     // this.handleLogin = this.handleLogin.bind(this);
     // this.handleSignup= this.handleSignup.bind(this);
     // this.handleDemo = this.handleDemo.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    // this.handleSubmit = this.handleSubmit.bind(this);
   };
 
-  componentDidMount() {
-    this.props.clearErrors();
-  }
+  // componentDidMount() {
+  //   this.props.clearErrors();
+  // }
 
-  update(field) {
-    return (e) =>
-      this.setState({
-        [field]: e.currentTarget.value,
-      });
-  }
+  // update(field) {
+  //   return (e) =>
+  //     this.setState({
+  //       [field]: e.currentTarget.value,
+  //     });
+  // }
 
-    handleSubmit(e) {
-      e.preventDefault();
-      const user = Object.assign({}, this.state);
-      this.props.processForm(user);
-    }
+  //   handleSubmit(e) {
+  //     e.preventDefault();
+  //     const user = Object.assign({}, this.state);
+  //     this.props.processForm(user);
+  //   }
 
 
-  renderErrors() {
-    return (
-      <div>
-        <ul>
-          {this.props.errors.map((error, i) => (
-            <li key={`error-${i}`}>{error}</li>
-          ))}
-        </ul>
-      </div>
-    );
-  }
+  // renderErrors() {
+  //   return (
+  //     <div>
+  //       <ul>
+  //         {this.props.errors.map((error, i) => (
+  //           <li key={`error-${i}`}>{error}</li>
+  //         ))}
+  //       </ul>
+  //     </div>
+  //   );
+  // }
 
   render() {
     return (
       <div className="login-page">
         <div className="user-auth-container">
-          <h1 className="project-logo">
-            Shmuora
-          </h1>
+          <h1 className="project-logo">Shmuora</h1>
           <h2 className="tagline">
             A place to share knowledge and better understand the world
           </h2>
@@ -56,6 +54,7 @@ class SessionForm extends React.Component {
             <SignupFormContainer />
             <LoginFormContainer />
           </div>
+
         </div>
       </div>
     );

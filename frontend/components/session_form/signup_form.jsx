@@ -39,15 +39,11 @@ class SignupForm extends React.Component{
             <div className="session-form">
                 <form onSubmit={this.handleSubmit}>
                     <h2 className="session-title">{this.props.formType}</h2>
-                    <div className="name-labels">
-                        <label className="first-name-label">FIRST NAME</label>
-                        <label className="last-name-label">LAST NAME</label>
-                    </div>
-                    <input type="text" className="first-name-input-box" value={this.state.first_name} onChange={this.handleChange("first_name")}/>
-                    <input type="text" className="last-name-input-box" value={this.state.last_name} onChange={this.handleChange("last_name")}/>
-                    <label className="input-label">EMAIL</label>
+                    <label className="input-label">Username</label>
+                    <input type="username" className="input-box" value={this.state.username} onChange={this.handleChange("username")}/>
+                    <label className="input-label">Email</label>
                     <input type="email" className="input-box" value={this.state.email} onChange={this.handleChange("email")}/>
-                    <label className="input-label">PASSWORD</label>
+                    <label className="input-label">Password</label>
                     <input type="password" className="input-box" value={this.state.password} onChange={this.handleChange("password")}/>
                     <div className="signup-submit-block">
                         <label></label>
