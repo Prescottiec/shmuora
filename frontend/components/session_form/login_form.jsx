@@ -62,12 +62,12 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div className="login-page">
-        <div className="user-auth-container">
-          <h1 className="project-logo">Shmuora</h1>
-          <h2 className="tagline">
-            A place to share knowledge and better understand the world
-          </h2>
+    //   <div className="login-page">
+    //     <div className="user-auth-container">
+    //       <h1 className="project-logo">Shmuora</h1>
+    //       <h2 className="tagline">
+    //         A place to share knowledge and better understand the world
+    //       </h2>
           <div className="login-form-container">
             <div className="signUpLogin">
               <div className="login">
@@ -120,8 +120,8 @@ class LoginForm extends React.Component {
               {/* </div> */}
             </div>
           </div>
-        </div>
-      </div>
+    //     </div>
+    // </div>
     );
   }
 }
