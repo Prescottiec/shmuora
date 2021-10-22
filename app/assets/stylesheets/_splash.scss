@@ -42,9 +42,20 @@
     font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     display: flex;
     position: relative;
+    justify-content: center;
     line-height: 1.0;
     color: #636466;
     font-weight: bold;
+}
+
+.main-session-forms {
+    display: flex;
+    flex-direction: column;
+}
+
+.signup-form {
+    display: flex;
+    flex-flow: column;
 }
 
 .login-form-box {
