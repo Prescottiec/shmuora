@@ -53,9 +53,28 @@
     flex-direction: column;
 }
 
+.signup-form-box {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
 .signup-form {
     display: flex;
-    flex-flow: column;
+    justify-content: center;
+    position: relative;
+}
+
+.session-title {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.signup-input {
+    display: flex;
+    justify-content: center;
+    position: relative;
 }
 
 .login-form-box {

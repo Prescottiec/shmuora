@@ -40,11 +40,11 @@ class SignupForm extends React.Component{
                 <form onSubmit={this.handleSubmit} className="signup-form-box">
                     <div className="signup-form">
                         <h2 className="session-title">{this.props.formType}</h2>
-                        <label className="input-label">Username</label>
+                        <label className="signup-input">Username</label>
                         <input type="username" className="input-box" value={this.state.username} onChange={this.handleChange("username")}/>
-                        <label className="input-label">Email</label>
+                        <label className="signup-input">Email</label>
                         <input type="email" className="input-box" value={this.state.email} onChange={this.handleChange("email")}/>
-                        <label className="input-label">Password</label>
+                        <label className="signup-input">Password</label>
                         <input type="password" className="input-box" value={this.state.password} onChange={this.handleChange("password")}/>
                         <div className="signup-submit-block">
                             <label></label>
