@@ -39,7 +39,7 @@ class SignupForm extends React.Component{
             <div className="session-form">
                 <form onSubmit={this.handleSubmit} className="signup-form-box">
                     <div className="signup-form">
-                        <h2 className="session-title">{this.props.formType}</h2>
+                        {/* <h2 className="session-title">{this.props.formType}</h2> */}
                         <label className="signup-input">Username</label>
                         <input type="username" className="input-box" value={this.state.username} onChange={this.handleChange("username")}/>
                         <label className="signup-input">Email</label>
