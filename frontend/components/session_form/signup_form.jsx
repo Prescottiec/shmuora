@@ -41,11 +41,26 @@ class SignupForm extends React.Component{
                     <div className="signup-form">
                         {/* <h2 className="session-title">{this.props.formType}</h2> */}
                         <label className="signup-input">Username</label>
-                        <input type="username" className="input-box" value={this.state.username} onChange={this.handleChange("username")}/>
+                        <input 
+                            type="username" 
+                            className="input-box" 
+                            value={this.state.username} 
+                            onChange={this.handleChange("username")}
+                        />
                         <label className="signup-input">Email</label>
-                        <input type="email" className="input-box" value={this.state.email} onChange={this.handleChange("email")}/>
+                        <input 
+                            type="email" 
+                            className="input-box" 
+                            value={this.state.email} 
+                            onChange={this.handleChange("email")}
+                        />
                         <label className="signup-input">Password</label>
-                        <input type="password" className="input-box" value={this.state.password} onChange={this.handleChange("password")}/>
+                        <input 
+                            type="password" 
+                            className="input-box" 
+                            value={this.state.password} 
+                            onChange={this.handleChange("password")}
+                        />
                         <div className="signup-submit-block">
                             <label></label>
                             <button className="submit-button">{this.props.formType}</button>
