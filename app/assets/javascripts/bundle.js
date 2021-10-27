@@ -1017,19 +1017,19 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
           placeholder: "Your Username",
           value: this.state.username,
           onChange: this.update("username"),
-          className: "login-input"
+          className: "input-box"
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Email"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "email",
           placeholder: "Your Email",
           value: this.state.email,
           onChange: this.update("email"),
-          className: "login-input"
+          className: "input-box"
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Password"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "password",
           placeholder: "Your Password",
           value: this.state.password,
           onChange: this.update("password"),
-          className: "login-input"
+          className: "input-box"
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           className: "session-submit",
           type: "submit",
@@ -1327,6 +1327,7 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
         className: "signup-input"
       }, "Username"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "username",
+        placeholder: "Your Username",
         className: "input-box",
         value: this.state.username,
         onChange: this.handleChange("username")
@@ -1334,6 +1335,7 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
         className: "signup-input"
       }, "Email"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "email",
+        placeholder: "Your Email",
         className: "input-box",
         value: this.state.email,
         onChange: this.handleChange("email")
@@ -1341,14 +1343,13 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
         className: "signup-input"
       }, "Password"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "password",
+        placeholder: "Your Password",
         className: "input-box",
         value: this.state.password,
         onChange: this.handleChange("password")
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "signup-submit-block"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "submit-button"
-      }, this.props.formType)))));
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "session-submit"
+      }, this.props.formType))));
     }
   }]);
 

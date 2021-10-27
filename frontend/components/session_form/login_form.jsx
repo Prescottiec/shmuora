@@ -83,7 +83,7 @@ class LoginForm extends React.Component {
                       placeholder="Your Username"
                       value={this.state.username}
                       onChange={this.update("username")}
-                      className="login-input"
+                      className="input-box"
                     />
                     <br />
                     <label>Email</label>
@@ -92,7 +92,7 @@ class LoginForm extends React.Component {
                       placeholder="Your Email"
                       value={this.state.email}
                       onChange={this.update("email")}
-                      className="login-input"
+                      className="input-box"
                     />
                     <br />
                     <label>Password</label>
@@ -101,7 +101,7 @@ class LoginForm extends React.Component {
                         placeholder="Your Password"
                         value={this.state.password}
                         onChange={this.update("password")}
-                        className="login-input"
+                        className="input-box"
                     />
                     <br />
                     <input
