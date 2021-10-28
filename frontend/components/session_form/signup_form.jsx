@@ -38,8 +38,8 @@ class SignupForm extends React.Component{
         return (
             <div className="session-form">
                 <form onSubmit={this.handleSubmit} className="signup-form-box">
+                    <br/>
                     <div className="signup-form">
-                        {/* <h2 className="session-title">{this.props.formType}</h2> */}
                         <label className="signup-input">Username</label>
                         <input 
                             type="username" 

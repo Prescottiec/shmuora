@@ -62,18 +62,11 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-    //   <div className="login-page">
-    //     <div className="user-auth-container">
-    //       <h1 className="project-logo">Shmuora</h1>
-    //       <h2 className="tagline">
-    //         A place to share knowledge and better understand the world
-    //       </h2>
           <div className="login-form-container">
             <div className="signUpLogin">
               <div className="login">
                 <form onSubmit={this.handleLogin} className="login-form-box">
                   <br />
-                  {/* Please {this.props.formType} or {this.props.navLink} */}
                   {this.renderErrors()}
                   <div className="login-form">
                     <br />
@@ -115,13 +108,8 @@ class LoginForm extends React.Component {
                 </form>
               </div>
 
-              {/* <div className="signup"> */}
-                {/* <form onSubmit={this.handleSignup}>Signup</form> */}
-              {/* </div> */}
             </div>
           </div>
-    //     </div>
-    // </div>
     );
   }
 }

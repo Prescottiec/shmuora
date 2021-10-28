@@ -50,7 +50,8 @@
 
 .main-session-forms {
     display: flex;
-    flex-direction: column;
+    // flex-flow: column wrap;
+    justify-content: center;
 }
 
 .signup-form-box {
@@ -74,7 +75,7 @@
 
 .signup-input {
     display: flex;
-    justify-content: center;
+    // justify-content: center;
     position: relative;
 }
 
