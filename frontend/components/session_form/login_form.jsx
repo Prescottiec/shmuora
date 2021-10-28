@@ -70,7 +70,7 @@ class LoginForm extends React.Component {
                   {this.renderErrors()}
                   <div className="login-form">
                     <br />
-                    <label>Login</label>
+                    <label className="user-auth-text">Login</label>
                     {/* <label>Username</label> */}
                     <input
                       type="text"
