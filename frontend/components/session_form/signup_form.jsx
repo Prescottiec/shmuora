@@ -41,7 +41,7 @@ class SignupForm extends React.Component{
                     <br/>
                     <div className="signup-form">
                         <br />
-                        <label classname="user-auth-text">Signup</label>
+                        <label className="user-auth-text">Signup</label>
                         {/* <label className="signup-input">Username</label> */}
                         <input 
                             type="username" 
