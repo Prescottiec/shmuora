@@ -50,13 +50,14 @@
 
 .main-session-forms {
     display: flex;
-    // flex-flow: column wrap;
     justify-content: center;
+    align-content: space-around;
 }
 
 .signup-form-box {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     position: relative;
 }
 
@@ -97,6 +98,7 @@
 
 .input-box {
     // font: optional;
+    display: flex;
     box-sizing: border-box;
     height: 45px;
     padding: 5px;

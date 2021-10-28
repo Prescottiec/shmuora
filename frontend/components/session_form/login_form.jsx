@@ -70,7 +70,8 @@ class LoginForm extends React.Component {
                   {this.renderErrors()}
                   <div className="login-form">
                     <br />
-                    <label>Username</label>
+                    <label>Login</label>
+                    {/* <label>Username</label> */}
                     <input
                       type="text"
                       placeholder="Your Username"
@@ -79,7 +80,7 @@ class LoginForm extends React.Component {
                       className="input-box"
                     />
                     <br />
-                    <label>Email</label>
+                    {/* <label>Email</label> */}
                     <input
                       type="email"
                       placeholder="Your Email"
@@ -88,7 +89,7 @@ class LoginForm extends React.Component {
                       className="input-box"
                     />
                     <br />
-                    <label>Password</label>
+                    {/* <label>Password</label> */}
                     <input
                         type="password"
                         placeholder="Your Password"

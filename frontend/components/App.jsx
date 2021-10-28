@@ -14,13 +14,13 @@ import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
 const App = () => (
   <div>
-    <NavLinkContainer />
+    <AuthRoute exact path="/" component={SessionFormContainer} />
+    <ProtectedRoute exact path="/" component={NavLinkContainer} />
+    <ProtectedRoute exact path="/" component={PostIndexContainer} />
     <Switch>
-      <AuthRoute exact path="/" component={SessionFormContainer} />
       <ProtectedRoute exact path="/posts/:postId" component={PostShowContainer} />
       <ProtectedRoute exact path="/posts/new" component={PostFormContainer} />
       <ProtectedRoute exact path="/posts/:postId/edit" component={PostFormContainer} />
-      <ProtectedRoute exact path="/posts" component={PostIndexContainer} />
       {/* <AuthRoute exact path="/" component={LogInFormContainer} /> */}
       {/* <AuthRoute exact path="/signup" component={SignUpFormContainer} /> */}
     </Switch>

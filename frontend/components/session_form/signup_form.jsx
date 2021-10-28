@@ -40,7 +40,9 @@ class SignupForm extends React.Component{
                 <form onSubmit={this.handleSubmit} className="signup-form-box">
                     <br/>
                     <div className="signup-form">
-                        <label className="signup-input">Username</label>
+                        <br />
+                        <label>Signup</label>
+                        {/* <label className="signup-input">Username</label> */}
                         <input 
                             type="username" 
                             placeholder="Your Username"
@@ -48,7 +50,8 @@ class SignupForm extends React.Component{
                             value={this.state.username} 
                             onChange={this.handleChange("username")}
                         />
-                        <label className="signup-input">Email</label>
+                        <br />
+                        {/* <label className="signup-input">Email</label> */}
                         <input 
                             type="email" 
                             placeholder="Your Email"
@@ -56,7 +59,8 @@ class SignupForm extends React.Component{
                             value={this.state.email} 
                             onChange={this.handleChange("email")}
                         />
-                        <label className="signup-input">Password</label>
+                        <br />
+                        {/* <label className="signup-input">Password</label> */}
                         <input 
                             type="password" 
                             placeholder="Your Password"
@@ -64,6 +68,7 @@ class SignupForm extends React.Component{
                             value={this.state.password} 
                             onChange={this.handleChange("password")}
                         />
+                        <br />
                         <button className="session-submit">{this.props.formType}</button>
                     </div>
                 </form>
