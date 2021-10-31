@@ -24,12 +24,13 @@ class NavBar extends React.Component {
           <Link className="nav-bar-home" to="/">Home</Link>
           <div className="about-dropdown">
             <a href="https://www.linkedin.com/prescottiec" className="about-dropdown-link" target="_blank">
-              {/* <img src={LinkedInIcon}/> */}
+              <img src={LinkedInIcon}/>
             </a>
             <a href="https://github.com/prescottiec" className="about-dropdown-link" target="_blank">
-              {/* <img src={GitHubIcon}/> */}
+              <img src={GitHubIcon}/>
             </a>
           </div>
+          <Link to="/posts/new">Create a post!</Link>
           <button className="logout-button" onClick={()=>this.handleClick()}>Sign Out</button>
         </nav>
       </div>  

@@ -15,9 +15,9 @@ class PostIndex extends React.Component {
         const posts = this.props.posts;
         console.log(posts);
         return(
-            <div>
-                <Link to="/posts/new">Create a post!</Link>
-                <div>
+            <div className="post-index-splash">
+                {/* <Link to="/posts/new">Create a post!</Link> */}
+                <div className="post-list">
                     {
                         posts.map(post => (
                             <PostIndexItem
