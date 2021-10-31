@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-// import GitHubIcon from "../../../app/assets/images/github.png";
-// import LinkedInIcon from "../../../app/assets/images/linkedin.png";
+import GitHubIcon from "../../../app/assets/images/github.png";
+import LinkedInIcon from "../../../app/assets/images/linkedin.png";
 
 class NavBar extends React.Component {
   constructor(props){
