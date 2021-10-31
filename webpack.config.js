@@ -6,6 +6,10 @@ module.exports = {
     path: path.resolve(__dirname, "app", "assets", "javascripts"),
     filename: "./bundle.js",
   },
+  devtool: "source-map",
+  resolve: {
+    extensions: [".js", ".jsx", "*"],
+  },
   module: {
     rules: [
       {
@@ -18,10 +22,12 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.(jpg|jpeg|png|gif)$/,
+        use: {
+            loader: 'url-loader'
+        }
+      }
     ],
-  },
-  devtool: "source-map",
-  resolve: {
-    extensions: [".js", ".jsx", "*"],
   },
 };
