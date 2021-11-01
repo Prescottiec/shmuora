@@ -20,7 +20,7 @@ class SignupForm extends React.Component{
 
     handleSubmit(e){
         e.preventDefault();
-        this.props.submitEvent(this.state).then( (action) => {
+        this.props.processForm(this.state).then( (action) => {
                 return this.props.history.push("/")
             }
         );
@@ -42,7 +42,7 @@ class SignupForm extends React.Component{
                     <div className="signup-form">
                         <br />
                         <label className="user-auth-text">Signup</label>
-                        {/* <label className="signup-input">Username</label> */}
+
                         <input 
                             type="username" 
                             placeholder="Your Username"
@@ -69,7 +69,7 @@ class SignupForm extends React.Component{
                             onChange={this.handleChange("password")}
                         />
                         <br />
-                        <button className="session-submit">{this.props.formType}</button>
+                        <button className="session-submit">Sign-up</button>
                     </div>
                 </form>
             </div>

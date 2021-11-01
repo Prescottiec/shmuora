@@ -426,7 +426,7 @@ var NavBar = /*#__PURE__*/function (_React$Component) {
         src: _app_assets_images_github_png__WEBPACK_IMPORTED_MODULE_2__["default"]
       }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/posts/new"
-      }, "Create a post!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, "Ask a question!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "logout-button",
         onClick: function onClick() {
           return _this3.handleClick();
@@ -1392,7 +1392,7 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
       var _this2 = this;
 
       e.preventDefault();
-      this.props.submitEvent(this.state).then(function (action) {
+      this.props.processForm(this.state).then(function (action) {
         return _this2.props.history.push("/");
       });
     }
@@ -1437,7 +1437,7 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
         onChange: this.handleChange("password")
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "session-submit"
-      }, this.props.formType))));
+      }, "Sign-up"))));
     }
   }]);
 
