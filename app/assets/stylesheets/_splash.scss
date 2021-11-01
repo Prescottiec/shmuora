@@ -15,13 +15,14 @@
 .user-auth-container {
     display: flex;
     flex-direction: column;
+    flex-flow: wrap;
     background-color: white;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     justify-content: center;
     width: 700px;
-    height: 575px;
+    height: 620px;
     margin: 0 auto;
     overflow: hidden;
 }
@@ -29,9 +30,6 @@
 .project-logo {
     display: flex;
     justify-content: center;
-    text-align: center;
-    // align-items: flex-start;
-    // position: relative;
     font-size: 60px;
     font-weight: bold;
     color: rgb(185, 43, 39);
@@ -39,13 +37,13 @@
 }
 
 .tagline {
-    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     display: flex;
     position: relative;
     justify-content: center;
     line-height: 1.0;
     color: #636466;
     font-weight: bold;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
 .main-session-forms {

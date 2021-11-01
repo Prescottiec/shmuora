@@ -1417,7 +1417,7 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
         className: "signup-form"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "user-auth-text"
-      }, "Signup"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, "Sign-up"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "username",
         placeholder: "Your Username",
         className: "input-box",
