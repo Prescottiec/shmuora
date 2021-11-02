@@ -4,7 +4,7 @@ class LoginForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: "",
+      // username: "",
       email: "",
       password: "",
     };
@@ -70,16 +70,16 @@ class LoginForm extends React.Component {
                   {this.renderErrors()}
                   <div className="login-form">
                     <br />
-                    <label className="user-auth-text">Login</label>
+                    <label className="user-auth-text">{this.props.formType}</label>
                     {/* <label>Username</label> */}
-                    <input
+                    {/* <input
                       type="text"
                       placeholder="Your Username"
                       value={this.state.username}
                       onChange={this.update("username")}
                       className="input-box"
                     />
-                    <br />
+                    <br /> */}
                     {/* <label>Email</label> */}
                     <input
                       type="email"

@@ -41,7 +41,7 @@ class SignupForm extends React.Component{
                     <br/>
                     <div className="signup-form">
                         <br />
-                        <label className="user-auth-text">Sign-up</label>
+                        <label className="user-auth-text">{this.props.formType}</label>
 
                         <input 
                             type="username" 
@@ -69,7 +69,7 @@ class SignupForm extends React.Component{
                             onChange={this.handleChange("password")}
                         />
                         <br />
-                        <button className="session-submit">Sign-up</button>
+                        <button className="session-submit">{this.props.formType}</button>
                     </div>
                 </form>
             </div>
