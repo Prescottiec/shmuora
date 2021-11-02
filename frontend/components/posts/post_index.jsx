@@ -13,19 +13,18 @@ class PostIndex extends React.Component {
 
     render() {
         const posts = this.props.posts;
-        console.log(posts);
-        return(
-            <div className="post-index-splash">
-                {/* <Link to="/posts/new">Create a post!</Link> */}
-                <div className="post-list">
-                    {
-                        posts.map(post => (
+        const list = posts.map(post => (
                             <PostIndexItem
                             post={post}
                             key={`${post.id}`}/>
-                        ))
-                    }
-                </div>
+                        ));
+        // console.log(posts);
+        return(
+            <div className="post-index-splash">
+                {/* <Link to="/posts/new">Create a post!</Link> */}
+                <ul className="post-list">
+                    { list }
+                </ul>
             </div>
         )
     }

@@ -718,17 +718,18 @@ var PostIndex = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       var posts = this.props.posts;
-      console.log(posts);
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "post-index-splash"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "post-list"
-      }, posts.map(function (post) {
+      var list = posts.map(function (post) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           post: post,
           key: "".concat(post.id)
         });
-      })));
+      }); // console.log(posts);
+
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "post-index-splash"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "post-list"
+      }, list));
     }
   }]);
 
