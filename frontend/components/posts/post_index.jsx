@@ -29,5 +29,5 @@ class PostIndex extends React.Component {
         )
     }
 }
-
+// github test
 export default PostIndex;
