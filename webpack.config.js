@@ -1,10 +1,14 @@
 const path = require("path");
 
 module.exports = {
-  entry: "./frontend/index.jsx",
+  entry: "./frontend/shmuora.jsx",
   output: {
     path: path.resolve(__dirname, "app", "assets", "javascripts"),
     filename: "./bundle.js",
+  },
+  devtool: "source-map",
+  resolve: {
+    extensions: [".js", ".jsx", "*"],
   },
   module: {
     rules: [
@@ -18,10 +22,12 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.(jpg|jpeg|png|gif)$/,
+        use: {
+            loader: 'file-loader'
+        }
+      }
     ],
-  },
-  devtool: "source-map",
-  resolve: {
-    extensions: [".js", ".jsx", "*"],
   },
 };

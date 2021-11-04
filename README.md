@@ -1,24 +1,12 @@
-# README
+# Shmuora
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Shmuora Live](https://shmuora.herokuapp.com/#/)
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Table of Contents
+* [Background](#background)
+* [Technologies](#technologies)
+* [Key Features](#key-features)
+  * [User Authentication](#user-authentication)
+  * [Posts](#posts)
+  * [Search](#search)
+  * [Comments](#comments)
