@@ -414,13 +414,13 @@ var NavBar = /*#__PURE__*/function (_React$Component) {
         className: "about-dropdown"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "https://www.linkedin.com/prescottiec",
-        className: "about-dropdown-link",
+        className: "linkedin-logo",
         target: "_blank"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: _app_assets_images_linkedin_png__WEBPACK_IMPORTED_MODULE_3__["default"]
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "https://github.com/prescottiec",
-        className: "about-dropdown-link",
+        className: "github-logo",
         target: "_blank"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: _app_assets_images_github_png__WEBPACK_IMPORTED_MODULE_2__["default"]
@@ -734,9 +734,7 @@ var PostIndex = /*#__PURE__*/function (_React$Component) {
   }]);
 
   return PostIndex;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component); // github test
-// new comment
-
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (PostIndex);
 

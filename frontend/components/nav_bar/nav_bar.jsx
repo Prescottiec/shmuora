@@ -23,10 +23,10 @@ class NavBar extends React.Component {
         <nav className="nav-bar-buttons"> 
           <Link className="nav-bar-home" to="/">Home</Link>
           <div className="about-dropdown">
-            <a href="https://www.linkedin.com/prescottiec" className="about-dropdown-link" target="_blank">
+            <a href="https://www.linkedin.com/prescottiec" className="linkedin-logo" target="_blank">
               <img src={LinkedInIcon}/>
             </a>
-            <a href="https://github.com/prescottiec" className="about-dropdown-link" target="_blank">
+            <a href="https://github.com/prescottiec" className="github-logo" target="_blank">
               <img src={GitHubIcon}/>
             </a>
           </div>
