@@ -13,7 +13,7 @@ class PostShow extends React.Component {
 
     render() {
         const post = this.props.post;
-        console.log(post);
+        // console.log(post);
         if (!post) {
             return(
                 <div></div>

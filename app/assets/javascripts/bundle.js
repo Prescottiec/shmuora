@@ -894,8 +894,7 @@ var PostShow = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var post = this.props.post;
-      console.log(post);
+      var post = this.props.post; // console.log(post);
 
       if (!post) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
