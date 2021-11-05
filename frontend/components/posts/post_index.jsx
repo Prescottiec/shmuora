@@ -22,9 +22,11 @@ class PostIndex extends React.Component {
         return(
             <div className="post-index-splash">
                 {/* <Link to="/posts/new">Create a post!</Link> */}
-                <ul className="post-list">
-                    { list }
-                </ul>
+                <div className="post-index-list">
+                    <ul className="post-list">
+                        { list }
+                    </ul>   
+                </div>
             </div>
         )
     }
