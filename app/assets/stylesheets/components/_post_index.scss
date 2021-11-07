@@ -1,0 +1,17 @@
+.post-index-splash {
+    display: flex;
+    justify-content: center;
+    background-color: lightgray;
+    height: 94vh;
+
+    overflow: auto;
+}
+
+.post-index-list {
+    display: flex;
+    justify-content: center;
+}
+
+.post-list {
+    display: inline-block;
+}
