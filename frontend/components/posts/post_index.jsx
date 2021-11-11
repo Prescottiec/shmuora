@@ -23,6 +23,9 @@ class PostIndex extends React.Component {
             <div className="post-index-splash">
                 {/* <Link to="/posts/new">Create a post!</Link> */}
                 <div className="post-index-list">
+                    {/* <li className="post-link"> */}
+                        {/* <Link className="post-item-link" to={"/posts/"+post.id}>{post.body}</Link> */}
+                    {/* </li> */}
                     <ul className="post-list">
                         { list }
                     </ul>   
