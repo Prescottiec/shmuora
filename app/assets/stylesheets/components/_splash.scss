@@ -1,0 +1,137 @@
+.login-page {
+    display: flex;
+    background-image: asset-url("login.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 650px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.user-auth-container {
+    display: flex;
+    flex-direction: column;
+    flex-flow: wrap;
+    background-color: white;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    justify-content: center;
+    width: 700px;
+    height: 620px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.project-logo {
+    display: flex;
+    justify-content: center;
+    font-size: 60px;
+    font-weight: bold;
+    color: rgb(185, 43, 39);
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.tagline {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    line-height: 1.0;
+    color: #636466;
+    font-weight: bold;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.main-session-forms {
+    display: flex;
+    justify-content: center;
+    align-content: space-around;
+}
+
+.user-auth-text {
+    font-weight: bold;
+}
+
+.signup-form-box {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.signup-form {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+}
+
+.session-title {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.signup-input {
+    display: flex;
+    // justify-content: center;
+    position: relative;
+}
+
+.login-form-box {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.login {
+    display: flex;
+    justify-content: center;
+}
+
+.login-form {
+    display: flex;
+    flex-flow: column;
+}
+
+.input-box {
+    font: optional;
+    display: flex;
+    box-sizing: border-box;
+    height: 45px;
+    padding: 5px;
+    align-items: center;
+    border-radius: 3px;
+    border-color: lightgray;
+    border-style: solid;
+}
+
+.session-submit {
+    font: inherit;
+    box-sizing: border-box;
+    font-size: 14px;
+    height: 38px;
+    padding: 0px 20px;
+    background-color: #6495ed;
+    position: relative;
+    border-width: 0px;
+    color: #fff;
+    border-radius: 1000px;
+}
+
+.demo-user-button {
+    font: inherit;
+    box-sizing: border-box;
+    font-size: 14px;
+    height: 38px;
+    padding: 0px 20px;
+    background-color: orangered;
+    position: relative;
+    border-width: 0px;
+    color: #fff;
+    border-radius: 1000px;
+}
