@@ -734,9 +734,7 @@ var PostIndex = /*#__PURE__*/function (_React$Component) {
   }]);
 
   return PostIndex;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component); // github test
-// new comment
-
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (PostIndex);
 
