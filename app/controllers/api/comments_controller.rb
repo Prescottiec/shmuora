@@ -3,27 +3,26 @@ class Api::CommentsController < ApplicationController
     def create
         @comment = Comment.new(comment_params)
         @comment.user_id = current_user.id
+        if @comment.save
+            # render :show
+        else
+            render json: @comment.errors.full_messages, status: 422
+        end
     end
 
     def update
-        @comment = Comment.includes(:post, :user).find_by(id: params[:id])
+        @comment = Comment.includes(:post, :user).find(params[:id])
         if @comment.update(comment_params) && @comment.user_id == current_user.id
-            # render "/api/posts/show"
-            #redirect_to api_post_url(@comment.post_id)
+            # render :show
         else
             render json: @comment.errors.full_messages, status: 422
         end
     end
 
     def destroy
-        @comment = Comment.includes(:post, :user).find_by(id: params[:id])
-
-        #post_show_id = @comment.post_id
-
+        @comment = Comment.includes(:post, :user).find(params[:id])
         if @comment.user_id == current_user.id
             @comment.destroy
-            # render "/api/posts/show"
-            #redirect_to api_post_url(post_show_id)
         else
             render json: @comment.errors.full_messages, status: 422
         end
