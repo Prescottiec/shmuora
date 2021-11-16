@@ -70,8 +70,11 @@ export const logout = () => dispatch => (
     ))
 );
 
-export const logout = () => dispatch => (
-    APIUtil.logout().then(user => (
-        dispatch(logoutCurrentUser())
-    ))
-);
+// export const logout = () => {
+//     return (dispatch) => {
+//         return APIUtil.logout().then(
+//             (user) => {
+//                 return dispatch(logoutCurrentUser())
+//         })
+//     }
+// };

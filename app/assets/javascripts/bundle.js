@@ -199,9 +199,104 @@ var deletePost = function deletePost(postId) {
   !*** ./frontend/actions/session_actions.js ***!
   \*********************************************/
 /*! exports provided: RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER, RECEIVE_SESSION_ERRORS, CLEAR_SESSION_ERRORS, receiveCurrentUser, logoutCurrentUser, receiveErrors, clearErrors, signup, login, logout */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/prescottcarlson/Desktop/new_project/quora/frontend/actions/session_actions.js: Identifier 'logout' has already been declared (73:13)\n\n\u001b[0m \u001b[90m 71 | \u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 72 | \u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 73 | \u001b[39m\u001b[36mexport\u001b[39m \u001b[36mconst\u001b[39m logout \u001b[33m=\u001b[39m () \u001b[33m=>\u001b[39m dispatch \u001b[33m=>\u001b[39m (\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 74 | \u001b[39m    \u001b[33mAPIUtil\u001b[39m\u001b[33m.\u001b[39mlogout()\u001b[33m.\u001b[39mthen(user \u001b[33m=>\u001b[39m (\u001b[0m\n\u001b[0m \u001b[90m 75 | \u001b[39m        dispatch(logoutCurrentUser())\u001b[0m\n\u001b[0m \u001b[90m 76 | \u001b[39m    ))\u001b[0m\n    at Object._raise (/Users/prescottcarlson/Desktop/new_project/quora/node_modules/@babel/parser/lib/index.js:742:17)\n    at Object.raiseWithData (/Users/prescottcarlson/Desktop/new_project/quora/node_modules/@babel/parser/lib/index.js:735:17)\n    at Object.raise (/Users/prescottcarlson/Desktop/new_project/quora/node_modules/@babel/parser/lib/index.js:729:17)\n    at ScopeHandler.checkRedeclarationInScope (/Users/prescottcarlson/Desktop/new_project/quora/node_modules/@babel/parser/lib/index.js:4781:12)\n    at ScopeHandler.declareName (/Users/prescottcarlson/Desktop/new_project/quora/node_modules/@babel/parser/lib/index.js:4747:12)\n    at Object.checkLVal (/Users/prescottcarlson/Desktop/new_project/quora/node_modules/@babel/parser/lib/index.js:9229:22)\n    at Object.parseVarId (/Users/prescottcarlson/Desktop/new_project/quora/node_modules/@babel/parser/lib/index.js:11785:10)\n    at Object.parseVar (/Users/prescottcarlson/Desktop/new_project/quora/node_modules/@babel/parser/lib/index.js:11760:12)\n    at Object.parseVarStatement (/Users/prescottcarlson/Desktop/new_project/quora/node_modules/@babel/parser/lib/index.js:11572:10)\n    at Object.parseStatementContent (/Users/prescottcarlson/Desktop/new_project/quora/node_modules/@babel/parser/lib/index.js:11171:21)\n    at Object.parseStatement (/Users/prescottcarlson/Desktop/new_project/quora/node_modules/@babel/parser/lib/index.js:11104:17)\n    at Object.parseExportDeclaration (/Users/prescottcarlson/Desktop/new_project/quora/node_modules/@babel/parser/lib/index.js:12313:17)\n    at Object.maybeParseExportDeclaration (/Users/prescottcarlson/Desktop/new_project/quora/node_modules/@babel/parser/lib/index.js:12269:31)\n    at Object.parseExport (/Users/prescottcarlson/Desktop/new_project/quora/node_modules/@babel/parser/lib/index.js:12199:29)\n    at Object.parseStatementContent (/Users/prescottcarlson/Desktop/new_project/quora/node_modules/@babel/parser/lib/index.js:11208:27)\n    at Object.parseStatement (/Users/prescottcarlson/Desktop/new_project/quora/node_modules/@babel/parser/lib/index.js:11104:17)\n    at Object.parseBlockOrModuleBlockBody (/Users/prescottcarlson/Desktop/new_project/quora/node_modules/@babel/parser/lib/index.js:11679:25)\n    at Object.parseBlockBody (/Users/prescottcarlson/Desktop/new_project/quora/node_modules/@babel/parser/lib/index.js:11665:10)\n    at Object.parseTopLevel (/Users/prescottcarlson/Desktop/new_project/quora/node_modules/@babel/parser/lib/index.js:11035:10)\n    at Object.parse (/Users/prescottcarlson/Desktop/new_project/quora/node_modules/@babel/parser/lib/index.js:12671:10)\n    at parse (/Users/prescottcarlson/Desktop/new_project/quora/node_modules/@babel/parser/lib/index.js:12722:38)\n    at parser (/Users/prescottcarlson/Desktop/new_project/quora/node_modules/@babel/core/lib/parser/index.js:54:34)\n    at parser.next (<anonymous>)\n    at normalizeFile (/Users/prescottcarlson/Desktop/new_project/quora/node_modules/@babel/core/lib/transformation/normalize-file.js:93:38)\n    at normalizeFile.next (<anonymous>)\n    at run (/Users/prescottcarlson/Desktop/new_project/quora/node_modules/@babel/core/lib/transformation/index.js:31:50)\n    at run.next (<anonymous>)\n    at Function.transform (/Users/prescottcarlson/Desktop/new_project/quora/node_modules/@babel/core/lib/transform.js:27:41)\n    at transform.next (<anonymous>)\n    at step (/Users/prescottcarlson/Desktop/new_project/quora/node_modules/gensync/index.js:254:32)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_CURRENT_USER", function() { return RECEIVE_CURRENT_USER; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOGOUT_CURRENT_USER", function() { return LOGOUT_CURRENT_USER; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_SESSION_ERRORS", function() { return RECEIVE_SESSION_ERRORS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CLEAR_SESSION_ERRORS", function() { return CLEAR_SESSION_ERRORS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveCurrentUser", function() { return receiveCurrentUser; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logoutCurrentUser", function() { return logoutCurrentUser; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveErrors", function() { return receiveErrors; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clearErrors", function() { return clearErrors; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "signup", function() { return signup; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "login", function() { return login; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logout", function() { return logout; });
+/* harmony import */ var _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/session_api_util */ "./frontend/util/session_api_util.js");
+
+var RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
+var LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
+var RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
+var CLEAR_SESSION_ERRORS = 'CLEAR_SESSION_ERRORS';
+var receiveCurrentUser = function receiveCurrentUser(currentUser) {
+  return {
+    type: RECEIVE_CURRENT_USER,
+    currentUser: currentUser
+  };
+};
+var logoutCurrentUser = function logoutCurrentUser() {
+  return {
+    type: LOGOUT_CURRENT_USER
+  };
+};
+var receiveErrors = function receiveErrors(errors) {
+  return {
+    type: RECEIVE_SESSION_ERRORS,
+    errors: errors
+  };
+};
+var clearErrors = function clearErrors() {
+  return {
+    type: CLEAR_SESSION_ERRORS
+  };
+};
+var signup = function signup(user) {
+  return function (dispatch) {
+    return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["signup"](user).then(function (user) {
+      return dispatch(receiveCurrentUser(user));
+    }, function (err) {
+      return dispatch(receiveErrors(err.responseJSON));
+    });
+  };
+}; // export const signup = (user) => {
+//     return (dispatch) => {
+//         APIUtil.signup(user).then(
+//             (user) => {
+//                 return dispatch(receiveCurrentUser(user));
+//             }, 
+//             (err) => {
+//                 return dispatch(receiveErrors(err.responseJSON))
+//             }
+//         )
+//     }
+// };
+
+var login = function login(user) {
+  return function (dispatch) {
+    return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["login"](user).then(function (user) {
+      return dispatch(receiveCurrentUser(user));
+    }, function (err) {
+      return dispatch(receiveErrors(err.responseJSON));
+    });
+  };
+}; // export const login = (user) => {
+//     return (dispatch) => {
+//         return APIUtil.login(user).then(
+//             (user) => {
+//                 return dispatch(receiveCurrentUser(user))
+//         }, 
+//         (err) => {
+//             return dispatch(receiveErrors(err.responseJSON))
+//         })
+//     }
+// };
+
+var logout = function logout() {
+  return function (dispatch) {
+    return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["logout"]().then(function (user) {
+      return dispatch(logoutCurrentUser());
+    });
+  };
+}; // export const logout = () => {
+//     return (dispatch) => {
+//         return APIUtil.logout().then(
+//             (user) => {
+//                 return dispatch(logoutCurrentUser())
+//         })
+//     }
+// };
 
 /***/ }),
 
@@ -1825,6 +1920,45 @@ var mapStateToProps = function mapStateToProps(state) {
 
 var AuthRoute = Object(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps)(Auth));
 var ProtectedRoute = Object(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps)(Protected));
+
+/***/ }),
+
+/***/ "./frontend/util/session_api_util.js":
+/*!*******************************************!*\
+  !*** ./frontend/util/session_api_util.js ***!
+  \*******************************************/
+/*! exports provided: login, signup, logout */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "login", function() { return login; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "signup", function() { return signup; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logout", function() { return logout; });
+var login = function login(user) {
+  return $.ajax({
+    method: "POST",
+    url: "/api/session",
+    data: {
+      user: user
+    }
+  });
+};
+var signup = function signup(user) {
+  return $.ajax({
+    method: "POST",
+    url: "/api/user",
+    data: {
+      user: user
+    }
+  });
+};
+var logout = function logout() {
+  return $.ajax({
+    method: "DELETE",
+    url: "/api/session"
+  });
+};
 
 /***/ }),
 
