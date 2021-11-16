@@ -9,7 +9,7 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
-class Answer < ApplicationRecord
+class Comment < ApplicationRecord
 
     validates :body, :user_id, :post_id, presence: true
 
