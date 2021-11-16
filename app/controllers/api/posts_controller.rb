@@ -14,7 +14,6 @@ class Api::PostsController < ApplicationController
         end
     end
 
-    # thunk actions debug it post_actions
     def show
         @post = Post.find(params[:id])
         if @post
