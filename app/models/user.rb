@@ -5,6 +5,10 @@ class User < ApplicationRecord
 
     has_many :posts, dependent: :destroy
 
+    has_many :comments,
+        foreign_key: :user_id,
+        class_name: :Comment
+
     attr_reader :password
 
     after_initialize :ensure_session_token
