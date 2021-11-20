@@ -298,27 +298,29 @@ var clearErrors = function clearErrors() {
   return {
     type: CLEAR_SESSION_ERRORS
   };
-};
+}; // export const signup = (user) => dispatch => (
+//     APIUtil.signup(user).then(user => (
+//         dispatch(receiveCurrentUser(user))
+//     ), err => (
+//         dispatch(receiveErrors(err.responseJSON))
+//     ))
+// );
+
 var signup = function signup(user) {
   return function (dispatch) {
-    return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["signup"](user).then(function (user) {
+    _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["signup"](user).then(function (user) {
       return dispatch(receiveCurrentUser(user));
     }, function (err) {
       return dispatch(receiveErrors(err.responseJSON));
     });
   };
-}; // export const signup = (user) => {
-//     return (dispatch) => {
-//         APIUtil.signup(user).then(
-//             (user) => {
-//                 return dispatch(receiveCurrentUser(user));
-//             }, 
-//             (err) => {
-//                 return dispatch(receiveErrors(err.responseJSON))
-//             }
-//         )
-//     }
-// };
+}; // export const login = (user) => dispatch => (
+//     APIUtil.login(user).then(user => (
+//         dispatch(receiveCurrentUser(user))
+//     ), err => (
+//         dispatch(receiveErrors(err.responseJSON))
+//     ))
+// );
 
 var login = function login(user) {
   return function (dispatch) {
@@ -328,17 +330,11 @@ var login = function login(user) {
       return dispatch(receiveErrors(err.responseJSON));
     });
   };
-}; // export const login = (user) => {
-//     return (dispatch) => {
-//         return APIUtil.login(user).then(
-//             (user) => {
-//                 return dispatch(receiveCurrentUser(user))
-//         }, 
-//         (err) => {
-//             return dispatch(receiveErrors(err.responseJSON))
-//         })
-//     }
-// };
+}; // export const logout = () => dispatch => (
+//     APIUtil.logout().then(user => (
+//         dispatch(logoutCurrentUser())
+//     ))
+// );
 
 var logout = function logout() {
   return function (dispatch) {
@@ -346,14 +342,7 @@ var logout = function logout() {
       return dispatch(logoutCurrentUser());
     });
   };
-}; // export const logout = () => {
-//     return (dispatch) => {
-//         return APIUtil.logout().then(
-//             (user) => {
-//                 return dispatch(logoutCurrentUser())
-//         })
-//     }
-// };
+};
 
 /***/ }),
 
