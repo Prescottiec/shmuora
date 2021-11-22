@@ -1155,7 +1155,7 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
       e.preventDefault();
       var demoUser = {
         username: 'Demo_User',
-        email: 'demo@demo.com',
+        email: 'demo_user@demo.com',
         password: '123456'
       };
       this.props.processForm(demoUser);
