@@ -15,15 +15,15 @@ import { AuthRoute, ProtectedRoute } from "../util/route_util";
 const App = () => (
   <div>
     <AuthRoute exact path="/" component={SessionFormContainer} />
-    <ProtectedRoute exact path="/" component={NavBarContainer} />
+    <ProtectedRoute path="/" component={NavBarContainer} />
     <ProtectedRoute exact path="/" component={PostIndexContainer} />
-    <Switch>
+    {/* <Switch> */}
       <ProtectedRoute exact path="/posts/:postId" component={PostShowContainer} />
       <ProtectedRoute exact path="/posts/new" component={PostFormContainer} />
       <ProtectedRoute exact path="/posts/:postId/edit" component={PostFormContainer} />
       {/* <AuthRoute exact path="/" component={LogInFormContainer} /> */}
       {/* <AuthRoute exact path="/signup" component={SignUpFormContainer} /> */}
-    </Switch>
+    {/* </Switch> */}
   </div>
 );
 

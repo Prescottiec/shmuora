@@ -7,7 +7,7 @@ const mapStateToProps = (state, ownProps) => {
     let isEdit = false;
     let post = { title: "", body: "" };
     let postId = null;
-    if (ownProps.match.path === "/posts/:postId/edit") {
+    if (ownProps.match.path === `/posts/${postId}/edit`) {
         postId = ownProps.match.params.postId;
         isEdit = true;
         post = state.entities.posts[postId]
@@ -21,11 +21,11 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => {
-    return {
+    return ({
         fetchPost: (postId) => dispatch(fetchPost(postId)),
         createPost: (post) => dispatch(createPost(post)),
         updatePost: (post) => dispatch(updatePost(post))
-    }
+    })
 }
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PostForm));

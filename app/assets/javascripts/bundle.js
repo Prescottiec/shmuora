@@ -383,14 +383,13 @@ var App = function App() {
     path: "/",
     component: _session_form_session_form_container__WEBPACK_IMPORTED_MODULE_3__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_8__["ProtectedRoute"], {
-    exact: true,
     path: "/",
     component: _nav_bar_nav_bar_container__WEBPACK_IMPORTED_MODULE_5__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_8__["ProtectedRoute"], {
     exact: true,
     path: "/",
     component: _posts_post_index_container__WEBPACK_IMPORTED_MODULE_6__["default"]
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_8__["ProtectedRoute"], {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_8__["ProtectedRoute"], {
     exact: true,
     path: "/posts/:postId",
     component: _posts_post_show_container__WEBPACK_IMPORTED_MODULE_4__["default"]
@@ -402,7 +401,7 @@ var App = function App() {
     exact: true,
     path: "/posts/:postId/edit",
     component: _posts_post_form_container__WEBPACK_IMPORTED_MODULE_7__["default"]
-  })));
+  }));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
@@ -617,9 +616,9 @@ var PostForm = /*#__PURE__*/function (_React$Component) {
   _createClass(PostForm, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      if (this.props.isEdit) {
-        this.props.fetchPost(this.props.postId);
-      }
+      console.log(this.props); // if (this.props.isEdit) {
+      //     this.props.fetchPost(this.props.postId);
+      // }
     }
   }, {
     key: "handleSubmit",
@@ -702,7 +701,7 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
   };
   var postId = null;
 
-  if (ownProps.match.path === "/posts/:postId/edit") {
+  if (ownProps.match.path === "/posts/".concat(postId, "/edit")) {
     postId = ownProps.match.params.postId;
     isEdit = true;
     post = state.entities.posts[postId];
@@ -980,7 +979,7 @@ var PostShow = /*#__PURE__*/function (_React$Component) {
 
       ;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/posts/:postId/edit"
+        to: "/posts/".concat(post.id, "/edit")
       }, "Click here to the post"), post.title, post.body);
     }
   }]);
@@ -1948,6 +1947,7 @@ var fetchPosts = function fetchPosts() {
   });
 };
 var fetchPost = function fetchPost(postId) {
+  debugger;
   return $.ajax({
     method: 'GET',
     url: "/api/posts/".concat(postId),
