@@ -4,7 +4,7 @@ class Api::CommentsController < ApplicationController
         @comment = Comment.new(comment_params)
         @comment.user_id = current_user.id
         if @comment.save
-            # render :show
+            render :show
         else
             render json: @comment.errors.full_messages, status: 422
         end
@@ -13,7 +13,7 @@ class Api::CommentsController < ApplicationController
     def update
         @comment = Comment.includes(:post, :user).find(params[:id])
         if @comment.update(comment_params) && @comment.user_id == current_user.id
-            # render :show
+            render :show
         else
             render json: @comment.errors.full_messages, status: 422
         end

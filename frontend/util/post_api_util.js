@@ -6,7 +6,6 @@ export const fetchPosts = () => (
 )
 
 export const fetchPost = (postId) => {
-    debugger
     return $.ajax({
         method: 'GET',
         url: `/api/posts/${postId}`,

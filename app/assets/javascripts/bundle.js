@@ -370,8 +370,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
- // import SignUpFormContainer from "./session_form/signup_form_container";
-// import LogInFormContainer from "./session_form/login_form_container";
 
 
 
@@ -1947,7 +1945,6 @@ var fetchPosts = function fetchPosts() {
   });
 };
 var fetchPost = function fetchPost(postId) {
-  debugger;
   return $.ajax({
     method: 'GET',
     url: "/api/posts/".concat(postId),
