@@ -9,10 +9,9 @@ class PostForm extends React.Component {
     }
 
     componentDidMount() {
-        console.log(this.props);
-        // if (this.props.isEdit) {
-        //     this.props.fetchPost(this.props.postId);
-        // }
+        if (this.props.isEdit) {
+            this.props.fetchPost(this.props.postId);
+        }
     }
 
     handleSubmit(e) {
