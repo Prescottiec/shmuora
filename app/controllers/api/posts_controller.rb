@@ -9,7 +9,6 @@ class Api::PostsController < ApplicationController
         @post.user_id = current_user.id
         if @post.save
             render :show
-            redirect_to api_post_url(@post)
         else
             render json: @post.errors.full_messages, status: 422
         end
