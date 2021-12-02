@@ -389,12 +389,12 @@ var App = function App() {
     component: _posts_post_index_container__WEBPACK_IMPORTED_MODULE_6__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_8__["ProtectedRoute"], {
     exact: true,
-    path: "/posts/:postId",
-    component: _posts_post_show_container__WEBPACK_IMPORTED_MODULE_4__["default"]
+    path: "/postsnew",
+    component: _posts_post_form_container__WEBPACK_IMPORTED_MODULE_7__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_8__["ProtectedRoute"], {
     exact: true,
-    path: "/posts/new",
-    component: _posts_post_form_container__WEBPACK_IMPORTED_MODULE_7__["default"]
+    path: "/posts/:postId",
+    component: _posts_post_show_container__WEBPACK_IMPORTED_MODULE_4__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_8__["ProtectedRoute"], {
     exact: true,
     path: "/posts/:postId/edit",
@@ -498,7 +498,7 @@ var NavBar = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: _app_assets_images_github_png__WEBPACK_IMPORTED_MODULE_2__["default"]
       }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/posts/new"
+        to: "/postsnew"
       }, "Ask a question!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "logout-button",
         onClick: function onClick() {
@@ -613,10 +613,9 @@ var PostForm = /*#__PURE__*/function (_React$Component) {
 
   _createClass(PostForm, [{
     key: "componentDidMount",
-    value: function componentDidMount() {
-      if (this.props.isEdit) {
-        this.props.fetchPost(this.props.postId);
-      }
+    value: function componentDidMount() {// if (this.props.isEdit) {
+      //     this.props.fetchPost(this.props.postId);
+      // }
     }
   }, {
     key: "handleSubmit",
@@ -624,10 +623,12 @@ var PostForm = /*#__PURE__*/function (_React$Component) {
       var _this2 = this;
 
       e.preventDefault();
+      console.log("hello");
 
       if (this.props.isEdit) {
         this.props.updatePost(this.state);
       } else {
+        console.log(this.state);
         this.props.createPost(this.state).then(function () {
           _this2.props.history.push("/posts");
         });
@@ -647,10 +648,14 @@ var PostForm = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this4 = this;
+
       var title = this.state ? this.state.title : "";
       var body = this.state ? this.state.body : "";
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        onSubmit: this.handleSubmit
+        onSubmit: function onSubmit() {
+          return _this4.handleSubmit();
+        }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         onChange: this.handleUpdate("title"),
         type: "text",
