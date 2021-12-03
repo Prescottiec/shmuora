@@ -6,10 +6,12 @@ class PostIndexItem extends React.Component {
     }
     
     render() {
+        console.log(this.props);
         return(
             <div>
-                {this.props.post.title}
-                {this.props.post.body}
+                sami
+                {/* {this.props.post.title} */}
+                {/* {this.props.post.body} */}
             </div>
         )
     }

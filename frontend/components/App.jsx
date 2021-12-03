@@ -14,7 +14,7 @@ const App = () => (
   <div>
     <AuthRoute exact path="/" component={SessionFormContainer} />
     <ProtectedRoute path="/" component={NavBarContainer} />
-    <ProtectedRoute exact path="/" component={PostIndexContainer} />
+    <ProtectedRoute exact path="/browse" component={PostIndexContainer} />
     <ProtectedRoute exact path="/postsnew" component={PostFormContainer} />
     <ProtectedRoute exact path="/posts/:postId" component={PostShowContainer} />
     <ProtectedRoute exact path="/posts/:postId/edit" component={PostFormContainer} />

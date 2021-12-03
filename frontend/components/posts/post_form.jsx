@@ -15,8 +15,7 @@ class PostForm extends React.Component {
     }
 
     handleSubmit(e) {
-        e.preventDefault();
-        console.log("hello");
+        // e.preventDefault();
         if (this.props.isEdit) {
             this.props.updatePost(this.state);
         }
@@ -40,11 +39,11 @@ class PostForm extends React.Component {
         let title = this.state ? this.state.title : "";
         let body = this.state ? this.state.body : "";
         return(
-            <form onSubmit={() => this.handleSubmit()}>
+            <div>
                 <input onChange={this.handleUpdate("title")} type="text" value={title}/>
                 <input onChange={this.handleUpdate("body")} type="text" value={body}/>
-                <input type="submit" value="submit"/>
-            </form>
+                <button onClick={() => this.handleSubmit()}>button</button>
+            </div>
         )
     }
 

@@ -385,7 +385,7 @@ var App = function App() {
     component: _nav_bar_nav_bar_container__WEBPACK_IMPORTED_MODULE_5__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_8__["ProtectedRoute"], {
     exact: true,
-    path: "/",
+    path: "/browse",
     component: _posts_post_index_container__WEBPACK_IMPORTED_MODULE_6__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_8__["ProtectedRoute"], {
     exact: true,
@@ -622,9 +622,7 @@ var PostForm = /*#__PURE__*/function (_React$Component) {
     value: function handleSubmit(e) {
       var _this2 = this;
 
-      e.preventDefault();
-      console.log("hello");
-
+      // e.preventDefault();
       if (this.props.isEdit) {
         this.props.updatePost(this.state);
       } else {
@@ -652,11 +650,7 @@ var PostForm = /*#__PURE__*/function (_React$Component) {
 
       var title = this.state ? this.state.title : "";
       var body = this.state ? this.state.body : "";
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        onSubmit: function onSubmit() {
-          return _this4.handleSubmit();
-        }
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         onChange: this.handleUpdate("title"),
         type: "text",
         value: title
@@ -664,10 +658,11 @@ var PostForm = /*#__PURE__*/function (_React$Component) {
         onChange: this.handleUpdate("body"),
         type: "text",
         value: body
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "submit",
-        value: "submit"
-      }));
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: function onClick() {
+          return _this4.handleSubmit();
+        }
+      }, "button"));
     }
   }]);
 
@@ -903,7 +898,8 @@ var PostIndexItem = /*#__PURE__*/function (_React$Component) {
   _createClass(PostIndexItem, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.post.title, this.props.post.body);
+      console.log(this.props);
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "sami");
     }
   }]);
 
@@ -1959,6 +1955,7 @@ var fetchPost = function fetchPost(postId) {
   });
 };
 var createPost = function createPost(post) {
+  console.log(post);
   return $.ajax({
     method: 'POST',
     url: '/api/posts',
