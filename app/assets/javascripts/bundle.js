@@ -482,7 +482,7 @@ var NavBar = /*#__PURE__*/function (_React$Component) {
         className: "nav-bar-buttons"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         className: "nav-bar-home",
-        to: "/"
+        to: "/browse"
       }, "Home"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "about-dropdown"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -1472,7 +1472,7 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
 
       e.preventDefault();
       this.props.processForm(this.state).then(function (action) {
-        return _this2.props.history.push("/");
+        return _this2.props.history.push("/browse");
       });
     }
   }, {

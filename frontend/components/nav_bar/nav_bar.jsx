@@ -21,7 +21,7 @@ class NavBar extends React.Component {
     return (
       <div className="nav-bar-ui">
         <nav className="nav-bar-buttons"> 
-          <Link className="nav-bar-home" to="/">Home</Link>
+          <Link className="nav-bar-home" to="/browse">Home</Link>
           <div className="about-dropdown">
             <a href="https://www.linkedin.com/prescottiec" className="linkedin-logo" target="_blank">
               <img src={LinkedInIcon}/>
