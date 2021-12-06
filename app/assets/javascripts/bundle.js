@@ -1143,20 +1143,29 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
+      var _this3 = this;
+
       e.preventDefault();
-      var user = Object.assign({}, this.state);
-      this.props.processForm(user);
+      var user = Object.assign({}, this.state); // this.props.processForm(user);
+
+      this.props.processForm(user).then(function () {
+        _this3.props.history.push("/browse");
+      });
     }
   }, {
     key: "handleDemo",
     value: function handleDemo(e) {
+      var _this4 = this;
+
       e.preventDefault();
       var demoUser = {
         username: 'Demo_User',
         email: 'demo_user@demo.com',
         password: '123456'
       };
-      this.props.processForm(demoUser);
+      this.props.processForm(demoUser).then(function () {
+        _this4.props.history.push("/browse");
+      });
     }
   }, {
     key: "renderErrors",
