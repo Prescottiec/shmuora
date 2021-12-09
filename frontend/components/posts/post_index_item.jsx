@@ -9,9 +9,9 @@ class PostIndexItem extends React.Component {
         console.log(this.props);
         return(
             <div>
-                sami
-                {/* {this.props.post.title} */}
-                {/* {this.props.post.body} */}
+                {/* sami */}
+                {this.props.post.title}
+                {this.props.post.body}
             </div>
         )
     }
