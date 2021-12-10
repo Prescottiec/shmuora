@@ -1313,39 +1313,11 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
   function SessionForm(props) {
     _classCallCheck(this, SessionForm);
 
-    return _super.call(this, props); // this.handleLogin = this.handleLogin.bind(this);
-    // this.handleSignup= this.handleSignup.bind(this);
-    // this.handleDemo = this.handleDemo.bind(this);
-    // this.handleSubmit = this.handleSubmit.bind(this);
+    return _super.call(this, props);
   }
 
   _createClass(SessionForm, [{
     key: "render",
-    // componentDidMount() {
-    //   this.props.clearErrors();
-    // }
-    // update(field) {
-    //   return (e) =>
-    //     this.setState({
-    //       [field]: e.currentTarget.value,
-    //     });
-    // }
-    //   handleSubmit(e) {
-    //     e.preventDefault();
-    //     const user = Object.assign({}, this.state);
-    //     this.props.processForm(user);
-    //   }
-    // renderErrors() {
-    //   return (
-    //     <div>
-    //       <ul>
-    //         {this.props.errors.map((error, i) => (
-    //           <li key={`error-${i}`}>{error}</li>
-    //         ))}
-    //       </ul>
-    //     </div>
-    //   );
-    // }
     value: function render() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "login-page"
