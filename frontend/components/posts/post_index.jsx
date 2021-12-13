@@ -18,7 +18,7 @@ class PostIndex extends React.Component {
                             post={post}
                             key={`${post.id}`}/>
                         ));
-        console.log(posts);
+        // console.log(posts);
         return(
             <div className="post-index-splash">
                 <div className="post-index-list">

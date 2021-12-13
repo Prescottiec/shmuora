@@ -480,10 +480,9 @@ var NavBar = /*#__PURE__*/function (_React$Component) {
         className: "nav-bar-ui"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
         className: "nav-bar-buttons"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        className: "nav-bar-home",
-        to: "/browse"
-      }, "Home"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "about"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "about-dropdown"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "https://www.linkedin.com/prescottiec",
@@ -497,7 +496,7 @@ var NavBar = /*#__PURE__*/function (_React$Component) {
         target: "_blank"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: _app_assets_images_github_png__WEBPACK_IMPORTED_MODULE_2__["default"]
-      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/postsnew"
       }, "Ask a question!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "logout-button",
@@ -626,7 +625,7 @@ var PostForm = /*#__PURE__*/function (_React$Component) {
       if (this.props.isEdit) {
         this.props.updatePost(this.state);
       } else {
-        console.log(this.state);
+        // console.log(this.state);
         this.props.createPost(this.state).then(function () {
           _this2.props.history.push("/posts");
         });
@@ -796,8 +795,8 @@ var PostIndex = /*#__PURE__*/function (_React$Component) {
           post: post,
           key: "".concat(post.id)
         });
-      });
-      console.log(posts);
+      }); // console.log(posts);
+
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-index-splash"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -898,7 +897,7 @@ var PostIndexItem = /*#__PURE__*/function (_React$Component) {
   _createClass(PostIndexItem, [{
     key: "render",
     value: function render() {
-      console.log(this.props);
+      // console.log(this.props);
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.post.title, this.props.post.body);
     }
   }]);
@@ -1936,7 +1935,6 @@ var fetchPost = function fetchPost(postId) {
   });
 };
 var createPost = function createPost(post) {
-  console.log(post);
   return $.ajax({
     method: 'POST',
     url: '/api/posts',
