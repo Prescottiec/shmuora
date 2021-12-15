@@ -16,7 +16,8 @@ class PostIndex extends React.Component {
         const list = posts.map(post => (
             <PostIndexItem
             post={post}
-            key={`${post.id}`}/>
+            key={`${post.id}`}
+            className="list-item"/>
         ));
     
         return(
