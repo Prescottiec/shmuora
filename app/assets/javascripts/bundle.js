@@ -795,8 +795,7 @@ var PostIndex = /*#__PURE__*/function (_React$Component) {
           post: post,
           key: "".concat(post.id)
         });
-      }); // console.log(posts);
-
+      });
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-index-splash"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
