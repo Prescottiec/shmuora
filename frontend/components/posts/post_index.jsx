@@ -14,10 +14,10 @@ class PostIndex extends React.Component {
     render() {
         const posts = this.props.posts;
         const list = posts.map(post => (
-                            <PostIndexItem
-                            post={post}
-                            key={`${post.id}`}/>
-                        ));
+            <PostIndexItem
+            post={post}
+            key={`${post.id}`}/>
+        ));
     
         return(
             <div className="post-index-splash">
