@@ -22,15 +22,13 @@ class NavBar extends React.Component {
       <div className="nav-bar-ui">
         <nav className="nav-bar-buttons"> 
           <Link className="nav-bar-home" to="/browse">Home</Link>
-          <div className="about-dropdown">
-            <Link to="https://www.linkedin.com/prescottiec" className="linkedin-logo" target="_blank">
-              <img src={LinkedInIcon}/>
-            </Link>
-            <Link to="https://github.com/prescottiec" className="github-logo" target="_blank">
-              <img src={GitHubIcon}/>
-            </Link>
-          </div>
-          <Link to='/postsnew'>Ask a question!</Link>
+          <Link to="https://www.linkedin.com/prescottiec" className="linkedin-logo" target="_blank">
+            <img src={LinkedInIcon}/>
+          </Link>
+          <Link to="https://github.com/prescottiec" className="github-logo" target="_blank">
+            <img src={GitHubIcon}/>
+          </Link>
+          {/* <Link to='/postsnew'>Ask a question!</Link> */}
           <button className="logout-button" onClick={()=>this.handleClick()}>Sign Out</button>
         </nav>
       </div>  
