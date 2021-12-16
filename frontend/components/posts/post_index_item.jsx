@@ -7,9 +7,13 @@ class PostIndexItem extends React.Component {
     
     render() {
         return(
-            <div className="list-item">
-                {this.props.post.title}
-                {this.props.post.body}
+            <div className="list-items">
+                <div className="post-title">
+                    {this.props.post.title}
+                </div>
+                <div className="post-body">
+                    {this.props.post.body}
+                </div>
             </div>
         )
     }
