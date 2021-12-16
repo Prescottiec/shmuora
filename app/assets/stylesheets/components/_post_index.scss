@@ -11,30 +11,36 @@
     justify-content: center;
 }
 
-.post-list {
-    display: inline-block;
-    justify-content: center;
-    background-color: white;
-    width: 600px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 1px;
-    padding-bottom: 1px;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.04);
-    margin-top: 8px;
-}
+// .post-list {
+//     display: inline-block;
+//     justify-content: center;
+//     background-color: white;
+//     width: 600px;
+//     padding-left: 20px;
+//     padding-right: 20px;
+//     padding-top: 1px;
+//     padding-bottom: 1px;
+//     box-shadow: 0 1px 1px rgba(0,0,0,0.04);
+//     margin-top: 8px;
+// }
 
 .list-item {
     background-color: white;
+    border: 1px solid rgb(222, 224, 225);
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 1px 1px;
+    margin: 1% auto;
+    padding: 1%;
+    // width: 60%;
     width: 500px;
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 1px;
-    padding-bottom: 1px;
+    // padding-bottom: 1px;
     box-shadow: 0 1px 1px rgba(0,0,0,0.04);
     margin-top: 8px;
     min-height: 100px;
     height: fit-content;
-    padding-top: 20px;
+    // padding-top: 20px;
     padding-bottom: 10px;
 }
