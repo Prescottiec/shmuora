@@ -793,8 +793,7 @@ var PostIndex = /*#__PURE__*/function (_React$Component) {
       var list = posts.map(function (post) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           post: post,
-          key: "".concat(post.id),
-          className: "list-item"
+          key: "".concat(post.id)
         });
       });
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
