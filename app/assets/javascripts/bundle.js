@@ -86,32 +86,6 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./app/assets/images/github.png":
-/*!**************************************!*\
-  !*** ./app/assets/images/github.png ***!
-  \**************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "7615be16eed41f806def1ba19d38b46d.png");
-
-/***/ }),
-
-/***/ "./app/assets/images/linkedin.png":
-/*!****************************************!*\
-  !*** ./app/assets/images/linkedin.png ***!
-  \****************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "1a7e82148422ce65c0f9a6a358333afe.png");
-
-/***/ }),
-
 /***/ "./frontend/actions/comment_actions.js":
 /*!*********************************************!*\
   !*** ./frontend/actions/comment_actions.js ***!
@@ -418,8 +392,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _app_assets_images_github_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../app/assets/images/github.png */ "./app/assets/images/github.png");
-/* harmony import */ var _app_assets_images_linkedin_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../app/assets/images/linkedin.png */ "./app/assets/images/linkedin.png");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -443,9 +415,8 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 
-
-
-
+ // import GitHubIcon from "../../../app/assets/images/github.png";
+// import LinkedInIcon from "../../../app/assets/images/linkedin.png";
 
 var NavBar = /*#__PURE__*/function (_React$Component) {
   _inherits(NavBar, _React$Component);
@@ -488,13 +459,13 @@ var NavBar = /*#__PURE__*/function (_React$Component) {
         className: "linkedin-logo",
         target: "_blank"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: linkedin.logo
+        src: window.linkedin_logo
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "https://github.com/prescottiec",
         className: "github-logo",
         target: "_blank"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: github.logo
+        src: window.github_logo
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "logout-button",
         onClick: function onClick() {
