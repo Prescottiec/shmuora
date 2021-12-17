@@ -23,7 +23,7 @@ class NavBar extends React.Component {
         <nav className="nav-bar-buttons"> 
           <Link className="nav-bar-home" to="/browse">Home</Link>
           <Link to="https://www.linkedin.com/prescottiec" className="linkedin-logo" target="_blank">
-            <img src={LinkedInIcon}/>
+            <img src={window.logo}/>
           </Link>
           <Link to="https://github.com/prescottiec" className="github-logo" target="_blank">
             <img src={GitHubIcon}/>
