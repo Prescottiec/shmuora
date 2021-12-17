@@ -488,13 +488,13 @@ var NavBar = /*#__PURE__*/function (_React$Component) {
         className: "linkedin-logo",
         target: "_blank"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: window.logo
+        src: linkedin.logo
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "https://github.com/prescottiec",
         className: "github-logo",
         target: "_blank"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: _app_assets_images_github_png__WEBPACK_IMPORTED_MODULE_2__["default"]
+        src: github.logo
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "logout-button",
         onClick: function onClick() {
