@@ -6,8 +6,24 @@
 
 .nav-bar-buttons {
     display: flex;
-    justify-content: space-between;
-    // align-items: center;
+    justify-content: space-around;
+    align-items: center;
     font-family: sans-serif;
     font-weight: bold;
+}
+
+.linkedin-logo {
+    display: block;
+    max-width: 30px;
+    max-height: 35px;
+    width: auto;
+    height: auto;
+}
+
+.github-logo {
+    display: block;
+    max-width: 30px;
+    max-height: 35px;
+    width: auto;
+    height: auto;
 }

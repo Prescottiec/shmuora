@@ -6,11 +6,6 @@
     overflow: auto;
 }
 
-.post-index-list {
-    display: flex;
-    justify-content: center;
-}
-
 .ask-question {
     display: flex;
     justify-content: center;
@@ -22,6 +17,11 @@
     padding-bottom: 1px;
     box-shadow: 0 1px 1px rgba(0,0,0,0.04);
     margin-top: 8px;
+}
+
+.post-index-list {
+    display: flex;
+    justify-content: center;
 }
 
 .list-items {
