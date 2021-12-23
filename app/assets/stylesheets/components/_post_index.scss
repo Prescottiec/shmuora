@@ -8,6 +8,7 @@
 
 .ask-question {
     display: flex;
+    font-family: sans-serif;
     // justify-content: center;
     background-color: white;
     border: 1px solid rgb(222, 224, 225);
@@ -45,6 +46,7 @@
 }
 
 .list-items {
+    font-family: sans-serif;
     background-color: white;
     border: 1px solid rgb(222, 224, 225);
     border-radius: 4px;
