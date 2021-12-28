@@ -9,6 +9,7 @@
 
 .ask-question {
     display: flex;
+    justify-content: center;
     font-family: sans-serif;
     background-color: white;
     border: 1px solid rgb(222, 224, 225);
@@ -19,7 +20,7 @@
     width: 500px;
     padding-left: 20px;
     padding-right: 20px;
-    padding-top: 1px;
+    padding-top: 15%;
     box-shadow: 0 1px 1px rgba(0,0,0,0.04);
     margin-top: 8px;
     min-height: 100px;
@@ -50,4 +51,9 @@
     min-height: 100px;
     height: fit-content;
     padding-bottom: 10px;
+}
+
+.post-title {
+    display: flex;
+    padding-top: 3%;
 }
