@@ -28,7 +28,6 @@ class NavBar extends React.Component {
           <Link to="https://github.com/prescottiec" className="github-logo" target="_blank">
             <img src={window.github_logo}/>
           </Link>
-          {/* <Link to='/postsnew'>Ask a question!</Link> */}
           <button className="logout-button" onClick={()=>this.handleClick()}>Sign Out</button>
         </nav>
       </div>  
