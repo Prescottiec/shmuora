@@ -66,6 +66,15 @@
     font-size: 90%;
 }
 
+.post-form-page {
+    display: flex;
+    justify-content: center;
+    background-color: lightgray;
+    height: 94vh;
+    overflow: auto;
+    flex-wrap: wrap;
+}
+
 .post-form-block {
     display: flex;
     justify-content: center;

@@ -618,6 +618,8 @@ var PostForm = /*#__PURE__*/function (_React$Component) {
       var title = this.state ? this.state.title : "";
       var body = this.state ? this.state.body : "";
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "post-form-page"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-form-block"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         onChange: this.handleUpdate("title"),
@@ -634,7 +636,7 @@ var PostForm = /*#__PURE__*/function (_React$Component) {
           return _this4.handleSubmit();
         },
         className: "post-form-button"
-      }, "Submit"));
+      }, "Submit")));
     }
   }]);
 
