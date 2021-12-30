@@ -617,18 +617,23 @@ var PostForm = /*#__PURE__*/function (_React$Component) {
 
       var title = this.state ? this.state.title : "";
       var body = this.state ? this.state.body : "";
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "post-form-block"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         onChange: this.handleUpdate("title"),
         type: "text",
-        value: title
+        value: title,
+        className: "post-form-title"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         onChange: this.handleUpdate("body"),
         type: "text",
-        value: body
+        value: body,
+        className: "post-form-body"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: function onClick() {
           return _this4.handleSubmit();
-        }
+        },
+        className: "post-form-button"
       }, "button"));
     }
   }]);

@@ -39,10 +39,10 @@ class PostForm extends React.Component {
         let title = this.state ? this.state.title : "";
         let body = this.state ? this.state.body : "";
         return(
-            <div>
-                <input onChange={this.handleUpdate("title")} type="text" value={title}/>
-                <input onChange={this.handleUpdate("body")} type="text" value={body}/>
-                <button onClick={() => this.handleSubmit()}>button</button>
+            <div className="post-form-block">
+                <input onChange={this.handleUpdate("title")} type="text" value={title} className="post-form-title"/>
+                <input onChange={this.handleUpdate("body")} type="text" value={body} className="post-form-body"/>
+                <button onClick={() => this.handleSubmit()} className="post-form-button">button</button>
             </div>
         )
     }
