@@ -69,21 +69,37 @@
 .post-form-block {
     display: flex;
     justify-content: center;
-    font-family: sans-serif;
-    font-size: 200%;
-    background-color: white;
-    border: 1px solid rgb(222, 224, 225);
-    border-radius: 4px;
+    // font-family: sans-serif;
+    // font-size: 200%;
+    // background-color: white;
+    // border: 1px solid rgb(222, 224, 225);
+    // border-radius: 4px;
+    // box-shadow: rgba(0, 0, 0, 0.04) 0px 1px 1px;
+    // margin: 1% auto;
+    // padding: 1%;
+    // width: 100%;
+    // padding-left: 20px;
+    // padding-right: 20px;
+    // padding-top: 15%;
+    // box-shadow: 0 1px 1px rgba(0,0,0,0.04);
+    // margin-top: 8px;
+    // min-height: 100px;
+    // height: fit-content;
+    // padding-bottom: 10px;
+}
+
+.post-form-title {
+    display: flex;
     box-shadow: rgba(0, 0, 0, 0.04) 0px 1px 1px;
-    margin: 1% auto;
-    padding: 1%;
-    width: 500px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 15%;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.04);
-    margin-top: 8px;
-    min-height: 100px;
-    height: fit-content;
-    padding-bottom: 10px;
+    border: 1px solid rgb(222, 224, 225);
+}
+
+.post-form-body {
+    display: flex;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 1px 1px;
+    border: 1px solid rgb(222, 224, 225);
+}
+
+.post-form-button {
+    display: flex;
 }
