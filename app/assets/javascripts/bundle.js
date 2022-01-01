@@ -625,12 +625,14 @@ var PostForm = /*#__PURE__*/function (_React$Component) {
         onChange: this.handleUpdate("title"),
         type: "text",
         value: title,
-        className: "post-form-title"
+        className: "post-form-title",
+        placeholder: "Title"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         onChange: this.handleUpdate("body"),
         type: "text",
         value: body,
-        className: "post-form-body"
+        className: "post-form-body",
+        placeholder: "Body"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: function onClick() {
           return _this4.handleSubmit();
