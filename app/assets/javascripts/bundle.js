@@ -627,7 +627,7 @@ var PostForm = /*#__PURE__*/function (_React$Component) {
         value: title,
         className: "post-form-title",
         placeholder: "Title"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
         onChange: this.handleUpdate("body"),
         type: "text",
         value: body,
