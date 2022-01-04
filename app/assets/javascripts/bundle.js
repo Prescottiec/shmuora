@@ -638,7 +638,7 @@ var PostForm = /*#__PURE__*/function (_React$Component) {
           return _this4.handleSubmit();
         },
         className: "post-form-button"
-      }, "Submit")));
+      }, "Add Question")));
     }
   }]);
 

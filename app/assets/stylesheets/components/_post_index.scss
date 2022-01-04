@@ -147,6 +147,19 @@
 }
 
 .post-form-button {
-    display: flex;
-    background-color: white;
+    font: inherit;
+    box-sizing: border-box;
+    font-size: 14px;
+    height: 38px;
+    padding: 0px 20px;
+    background-color: #6495ed;
+    position: relative;
+    border-width: 0px;
+    color: #fff;
+    border-radius: 14%;
+    // border-radius: 1000px;
+    // display: flex;
+    // font-family: sans-serif;
+    // background-color: #6495ed;
+    // color: white;
 }
