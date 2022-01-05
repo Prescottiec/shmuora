@@ -22,7 +22,7 @@ class PostForm extends React.Component {
         else {
             // console.log(this.state);
             this.props.createPost(this.state).then(() => {
-                this.props.history.push("/posts")
+                this.props.history.push("/browse")
             })
         };
     }

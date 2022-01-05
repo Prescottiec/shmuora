@@ -595,7 +595,7 @@ var PostForm = /*#__PURE__*/function (_React$Component) {
       } else {
         // console.log(this.state);
         this.props.createPost(this.state).then(function () {
-          _this2.props.history.push("/posts");
+          _this2.props.history.push("/browse");
         });
       }
 
