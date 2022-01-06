@@ -13,15 +13,15 @@ class PostShow extends React.Component {
 
     render() {
         const post = this.props.post;
-        // console.log(post);
         if (!post) {
             return(
                 <div></div>
             )
         };
         return(
-            <div>
-                <Link to={`/posts/${post.id}/edit`}>Click here to the post</Link>
+            <div className="post-show-page">
+                {/* <Link to={`/posts/${post.id}/edit`}>Click here to the post</Link> */}
+                <Link to={`/posts/${post.id}`}>Click here to the post</Link>
                 {post.title}
                 {post.body}
             </div>
