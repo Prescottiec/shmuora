@@ -21,7 +21,7 @@ class PostShow extends React.Component {
         return(
             <div className="post-show-page">
                 {/* <Link to={`/posts/${post.id}/edit`}>Click here to the post</Link> */}
-                <Link to={`/posts/${post.id}`}>Click here to the post</Link>
+                <Link to={`/posts/${post.id}`}>{post.title}</Link>
                 {post.title}
                 {post.body}
             </div>
