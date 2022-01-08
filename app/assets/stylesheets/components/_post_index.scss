@@ -166,3 +166,12 @@
     // background-color: #6495ed;
     // color: white;
 }
+
+.post-show-page {
+    display: flex;
+    justify-content: center;
+    background-color: lightgray;
+    height: 94vh;
+    overflow: auto;
+    flex-wrap: wrap;
+}
