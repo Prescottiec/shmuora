@@ -1022,7 +1022,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
       return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_0__["fetchPost"])(postId));
     },
     deletePost: function deletePost(postId) {
-      return dispatch(deleteQuestion(postId));
+      return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_0__["deletePost"])(postId));
     },
     createComment: function createComment(comment) {
       return dispatch(Object(_actions_comment_actions__WEBPACK_IMPORTED_MODULE_4__["createComment"])(comment));
