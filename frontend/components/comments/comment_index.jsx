@@ -11,6 +11,13 @@ class CommentIndex extends React.Component{
     }
 
     render(){
+
+        if (!this.props.user) {
+            return(
+                <div></div>
+            )
+        };
+
         return (
             <div className="post-index">
             </div>
