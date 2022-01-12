@@ -12,10 +12,7 @@ class CommentIndexItem extends React.Component {
         return(
             <div className="list-items">
                 <div className="post-title">
-                    <Link to={`/posts/${post.id}`}>{post.title}</Link>
-                </div>
-                <div className="post-body">
-                    {this.props.post.body}
+                    <Link to={`/posts/${post.id}`}>{post.comment}</Link>
                 </div>
             </div>
         )
