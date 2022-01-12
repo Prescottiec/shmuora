@@ -18,6 +18,7 @@ class PostShow extends React.Component {
                 <div></div>
             )
         };
+        
         return(
             <div className="post-show-page">
                 <div className="list-items">
