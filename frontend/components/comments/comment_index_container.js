@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchPosts } from '../../actions/post_actions';
-import PostIndex from './post_index';
+import CommentIndex from './comment_index';
 
 const mapStateToProps = (state) =>{
     return {
@@ -15,4 +15,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(PostIndex);
+export default connect(mapStateToProps, mapDispatchToProps)(CommentIndex);

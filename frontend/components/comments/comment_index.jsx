@@ -1,25 +1,32 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import CommentIndexItem from "./comment_index_item";
+import { Link } from "react-router-dom";
 
-class CommentIndex extends React.Component{
-    constructor(props){
+class CommentIndex extends React.Component {
+    constructor(props) {
         super(props)
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.props.fetchPosts();
     }
 
-    render(){
-
-        if (!this.props.user) {
-            return(
-                <div></div>
-            )
-        };
-
-        return (
-            <div className="post-index">
+    render() {
+        const comments = this.props.posts.comments;
+        const list = comments.map(comment => (
+            <CommentIndexItem
+            comment={comment}
+            key={`${comment.id}`}/>
+        ));
+    
+        return(
+            <div className="post-index-splash">
+                <div className="post-index-list">
+                <Link to='/postsnew' className="ask-question">Ask a question!</Link>
+                    <ul className="post-list">
+                        { list }
+                    </ul>   
+                </div>
             </div>
         )
     }
