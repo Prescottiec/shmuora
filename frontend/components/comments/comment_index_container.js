@@ -5,6 +5,7 @@ import CommentIndex from './comment_index';
 const mapStateToProps = (state) =>{
     return {
         posts: Object.values(state.entities.posts),
+        comments: Object.values(state.entities.posts.comments),
         user: Object.values(state.entities.users)[0]
     }
 }

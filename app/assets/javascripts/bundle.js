@@ -490,6 +490,7 @@ __webpack_require__.r(__webpack_exports__);
 var mapStateToProps = function mapStateToProps(state) {
   return {
     posts: Object.values(state.entities.posts),
+    comments: Object.values(state.entities.posts.comments),
     user: Object.values(state.entities.users)[0]
   };
 };
