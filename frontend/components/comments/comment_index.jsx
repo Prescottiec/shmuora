@@ -13,19 +13,19 @@ class CommentIndex extends React.Component {
 
     render() {
         const comments = this.props.post.comments;
-        const list = comments.map(comment => (
-            <CommentIndexItem
-            comment={comment}
-            key={`${comment.id}`}/>
-        ));
+        // const list = comments.map(comment => (
+        //     <CommentIndexItem
+        //     comment={comment}
+        //     key={`${comment.id}`}/>
+        // ));
     
         return(
             <div className="post-index-splash">
                 <div className="post-index-list">
                 {/* <Link to='/postsnew' className="ask-question">Ask a question!</Link> */}
-                    <ul className="post-list">
+                    {/* <ul className="post-list">
                         { list }
-                    </ul>   
+                    </ul>    */}
                 </div>
             </div>
         )

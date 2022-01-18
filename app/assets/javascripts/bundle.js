@@ -442,20 +442,17 @@ var CommentIndex = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var comments = this.props.post.comments;
-      var list = comments.map(function (comment) {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comment_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          comment: comment,
-          key: "".concat(comment.id)
-        });
-      });
+      var comments = this.props.post.comments; // const list = comments.map(comment => (
+      //     <CommentIndexItem
+      //     comment={comment}
+      //     key={`${comment.id}`}/>
+      // ));
+
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-index-splash"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-index-list"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-        className: "post-list"
-      }, list)));
+      }));
     }
   }]);
 
