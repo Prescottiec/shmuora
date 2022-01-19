@@ -1,6 +1,6 @@
 import React from 'react';
 import CommentIndexItem from "./comment_index_item";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class CommentIndex extends React.Component {
     constructor(props) {
@@ -13,6 +13,8 @@ class CommentIndex extends React.Component {
 
     render() {
         const comments = this.props.post.comments;
+        console.log(comments);
+        console.log(this.props.posts);
         // const list = comments.map(comment => (
         //     <CommentIndexItem
         //     comment={comment}

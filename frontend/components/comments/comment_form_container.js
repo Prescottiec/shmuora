@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { fetchPost } from "../../actions/post_actions";
-import { createComment, updateComment } from "../../actions/comment_actions";
+import { createComment, updateComment, deleteComment } from "../../actions/comment_actions";
 import CommentForm from "./comment_form";
 
 const mapStateToProps = (state, ownProps) => {
@@ -23,9 +23,9 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
     return ({
-        fetchPost: (postId) => dispatch(fetchPost(postId)),
         createComment: (comment) => dispatch(createComment(comment)),
-        updateComment: (comment) => dispatch(updateComment(comment))
+        updateComment: (comment) => dispatch(updateComment(comment)),
+        deleteComment: (commentId) => dispatch(deleteComment(commentId))
     })
 }
 

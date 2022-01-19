@@ -398,6 +398,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _comment_index_item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./comment_index_item */ "./frontend/components/comments/comment_index_item.jsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -421,7 +422,8 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 
- // import { Link } from "react-router-dom";
+
+
 
 var CommentIndex = /*#__PURE__*/function (_React$Component) {
   _inherits(CommentIndex, _React$Component);
@@ -442,7 +444,9 @@ var CommentIndex = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var comments = this.props.post.comments; // const list = comments.map(comment => (
+      var comments = this.props.post.comments;
+      console.log(comments);
+      console.log(this.props.posts); // const list = comments.map(comment => (
       //     <CommentIndexItem
       //     comment={comment}
       //     key={`${comment.id}`}/>
@@ -481,8 +485,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
-    posts: Object.values(state.entities.posts),
-    comments: Object.values(state.entities.posts.comments)
+    posts: state.entities.posts,
+    comments: state.entities.posts.comments
   };
 };
 
@@ -1192,8 +1196,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _post_show__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./post_show */ "./frontend/components/posts/post_show.jsx");
-/* harmony import */ var _actions_comment_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/comment_actions */ "./frontend/actions/comment_actions.js");
-
 
 
 
@@ -1214,15 +1216,6 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     deletePost: function deletePost(postId) {
       return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_0__["deletePost"])(postId));
-    },
-    createComment: function createComment(comment) {
-      return dispatch(Object(_actions_comment_actions__WEBPACK_IMPORTED_MODULE_4__["createComment"])(comment));
-    },
-    updateComment: function updateComment(comment) {
-      return dispatch(Object(_actions_comment_actions__WEBPACK_IMPORTED_MODULE_4__["updateComment"])(comment));
-    },
-    deleteComment: function deleteComment(commentId) {
-      return dispatch(Object(_actions_comment_actions__WEBPACK_IMPORTED_MODULE_4__["deleteComment"])(commentId));
     }
   };
 };
