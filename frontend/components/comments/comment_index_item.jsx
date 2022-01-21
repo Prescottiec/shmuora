@@ -9,10 +9,15 @@ class CommentIndexItem extends React.Component {
     
     render() {
         const comment = this.props.post.comment;
+        if (!comment) {
+            return(
+                <div></div>
+            )
+        };
         return(
             <div className="list-items">
                 <div className="post-title">
-                    <Link to={`/posts/${post.id}`}>{comment}</Link>
+                    <Link to={`/posts/${post.id}`}>{comment.body}</Link>
                 </div>
             </div>
         )

@@ -29,6 +29,10 @@ class PostShow extends React.Component {
                         {post.body}
                     </div>
                 </div>
+
+                <div className="comment-show">
+                    {post.comment}
+                </div>
             </div>
         )
     }

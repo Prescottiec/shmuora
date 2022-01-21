@@ -431,9 +431,13 @@ var CommentIndex = /*#__PURE__*/function (_React$Component) {
   var _super = _createSuper(CommentIndex);
 
   function CommentIndex(props) {
+    var _this;
+
     _classCallCheck(this, CommentIndex);
 
-    return _super.call(this, props);
+    _this = _super.call(this, props);
+    _this.state = _this.props.posts ? _this.props.posts : [];
+    return _this;
   }
 
   _createClass(CommentIndex, [{
@@ -444,19 +448,30 @@ var CommentIndex = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var comments = this.props.post.comments;
-      console.log(comments);
-      console.log(this.props.posts); // const list = comments.map(comment => (
-      //     <CommentIndexItem
-      //     comment={comment}
-      //     key={`${comment.id}`}/>
-      // ));
+      var comments = this.props.comments;
 
+      if (!comments) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
+      } // console.log(comment);
+      // console.log(this.props.posts);
+
+
+      var list = comments.map(function (comment) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comment_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          comment: comment,
+          key: "".concat(comment.id)
+        });
+      });
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-index-splash"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-index-list"
-      }));
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+        to: "/postsnew",
+        className: "ask-question"
+      }, "Ask a question!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "post-list"
+      }, list)));
     }
   }]);
 
@@ -558,13 +573,19 @@ var CommentIndexItem = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       var comment = this.props.post.comment;
+
+      if (!comment) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
+      }
+
+      ;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "list-items"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-title"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/posts/".concat(post.id)
-      }, comment)));
+      }, comment.body)));
     }
   }]);
 
@@ -1172,7 +1193,9 @@ var PostShow = /*#__PURE__*/function (_React$Component) {
         className: "post-title"
       }, post.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-body"
-      }, post.body)));
+      }, post.body)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "comment-show"
+      }, post.comment));
     }
   }]);
 
