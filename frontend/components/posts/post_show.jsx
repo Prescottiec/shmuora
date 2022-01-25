@@ -32,7 +32,7 @@ class PostShow extends React.Component {
                         {post.body}
                     </div>
                     <div className="post-title">
-                        <CommentForm/>
+                        {/* <CommentForm/> */}
                     </div>
                 </div>
 

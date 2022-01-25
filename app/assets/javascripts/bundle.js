@@ -365,7 +365,7 @@ var App = function App() {
     component: _posts_post_index_container__WEBPACK_IMPORTED_MODULE_6__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_9__["ProtectedRoute"], {
     exact: true,
-    path: "/browse",
+    path: "/comments",
     component: _comments_comment_index_container__WEBPACK_IMPORTED_MODULE_8__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_9__["ProtectedRoute"], {
     exact: true,
@@ -477,7 +477,7 @@ var CommentForm = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this4 = this;
 
-      var comment = this.state ? this.state.body : "";
+      var comment = this.state ? this.state.comment : "";
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-form-page"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -493,7 +493,7 @@ var CommentForm = /*#__PURE__*/function (_React$Component) {
           return _this4.handleSubmit();
         },
         className: "post-form-button"
-      }, "Add Question")));
+      }, "Add Comment")));
     }
   }]);
 
@@ -1232,7 +1232,7 @@ var PostShow = /*#__PURE__*/function (_React$Component) {
         className: "post-body"
       }, post.body), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-title"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comments_comment_form__WEBPACK_IMPORTED_MODULE_2__["default"], null))));
+      })));
     }
   }]);
 
