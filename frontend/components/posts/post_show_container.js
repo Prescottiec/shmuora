@@ -7,6 +7,8 @@ const mapStateToProps = (state, ownProps) => {
     let postId = ownProps.match.params.postId;
     return {
         post: state.entities.posts[postId],
+        posts: Object.values(state.entities.posts),
+        // comment: state.entities.posts[postId].comment,
         postId: postId
     };
 }

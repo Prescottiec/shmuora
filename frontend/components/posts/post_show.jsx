@@ -13,6 +13,7 @@ class PostShow extends React.Component {
 
     render() {
         const post = this.props.post;
+        // const comment = this.props.comment;
         if (!post) {
             return(
                 <div></div>
@@ -24,15 +25,16 @@ class PostShow extends React.Component {
                 <div className="list-items">
                     <div className="post-title">
                         {post.title}
+                        {post.comment}
                     </div>
                     <div className="post-body">
                         {post.body}
                     </div>
+                    {/* <div className="post-title">
+                        {post.comment.body}
+                    </div> */}
                 </div>
 
-                <div className="comment-show">
-                    {post.comment}
-                </div>
             </div>
         )
     }

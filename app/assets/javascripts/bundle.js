@@ -365,7 +365,7 @@ var App = function App() {
     component: _posts_post_index_container__WEBPACK_IMPORTED_MODULE_6__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_9__["ProtectedRoute"], {
     exact: true,
-    path: "/comments",
+    path: "/browse",
     component: _comments_comment_index_container__WEBPACK_IMPORTED_MODULE_8__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_9__["ProtectedRoute"], {
     exact: true,
@@ -1095,7 +1095,7 @@ var PostShow = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var post = this.props.post;
+      var post = this.props.post; // const comment = this.props.comment;
 
       if (!post) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
@@ -1108,11 +1108,9 @@ var PostShow = /*#__PURE__*/function (_React$Component) {
         className: "list-items"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-title"
-      }, post.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, post.title, post.comment), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-body"
-      }, post.body)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "comment-show"
-      }, post.comment));
+      }, post.body)));
     }
   }]);
 
@@ -1145,6 +1143,8 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
   var postId = ownProps.match.params.postId;
   return {
     post: state.entities.posts[postId],
+    posts: Object.values(state.entities.posts),
+    // comment: state.entities.posts[postId].comment,
     postId: postId
   };
 };
