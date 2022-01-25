@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import CommentForm from "../comments/comment_form";
 
 class PostShow extends React.Component {
     constructor(props) {
@@ -30,9 +31,9 @@ class PostShow extends React.Component {
                     <div className="post-body">
                         {post.body}
                     </div>
-                    {/* <div className="post-title">
-                        {post.comment.body}
-                    </div> */}
+                    <div className="post-title">
+                        <CommentForm/>
+                    </div>
                 </div>
 
             </div>
