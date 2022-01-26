@@ -1,4 +1,13 @@
 class Api::CommentsController < ApplicationController
+
+    def index
+        @comments = Comment.find(params[:post_id])
+        if @comments
+            render :index
+        else
+            render json: ["This post does not exist"], status: 404
+        end
+    end
     
     def create
         @comment = Comment.new(comment_params)
