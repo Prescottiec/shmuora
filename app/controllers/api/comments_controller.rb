@@ -1,11 +1,12 @@
 class Api::CommentsController < ApplicationController
 
     def index
-        @comments = Comment.find(params[:post_id])
+        # debugger
+        @comments = [Comment.find_by(post_id: comment_params[:post_id]).as_json]
         if @comments
             render :index
         else
-            render json: ["This post does not exist"], status: 404
+            render json: ["This comment does not exist"], status: 404
         end
     end
     

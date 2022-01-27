@@ -129,9 +129,9 @@ var removeComment = function removeComment(commentId) {
   };
 };
 
-var fetchComments = function fetchComments() {
+var fetchComments = function fetchComments(postId) {
   return function (dispatch) {
-    return _util_comment_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchComments"]().then(function (comments) {
+    return _util_comment_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchComments"](postId).then(function (comments) {
       return dispatch(receiveComments(comments));
     });
   };
@@ -624,15 +624,17 @@ var CommentIndex = /*#__PURE__*/function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_post_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/post_actions */ "./frontend/actions/post_actions.js");
-/* harmony import */ var _comment_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./comment_index */ "./frontend/components/comments/comment_index.jsx");
+/* harmony import */ var _actions_comment_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/comment_actions */ "./frontend/actions/comment_actions.js");
+/* harmony import */ var _comment_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./comment_index */ "./frontend/components/comments/comment_index.jsx");
+
 
 
 
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
-    posts: state.entities.posts,
-    comments: state.entities.posts.comments
+    posts: state.entities.posts // comments: state.entities.posts.comments
+
   };
 };
 
@@ -640,11 +642,14 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     fetchPosts: function fetchPosts() {
       return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_1__["fetchPosts"])());
+    },
+    fetchComments: function fetchComments() {
+      return dispatch(Object(_actions_comment_actions__WEBPACK_IMPORTED_MODULE_2__["fetchComments"])());
     }
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_comment_index__WEBPACK_IMPORTED_MODULE_2__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_comment_index__WEBPACK_IMPORTED_MODULE_3__["default"]));
 
 /***/ }),
 
@@ -1228,6 +1233,7 @@ var PostShow = /*#__PURE__*/function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.fetchPost(this.props.postId);
+      this.props.fetchComments(this.props.postId);
     }
   }, {
     key: "render",
@@ -1270,9 +1276,11 @@ var PostShow = /*#__PURE__*/function (_React$Component) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_post_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../actions/post_actions */ "./frontend/actions/post_actions.js");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _post_show__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./post_show */ "./frontend/components/posts/post_show.jsx");
+/* harmony import */ var _actions_comment_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/comment_actions */ "./frontend/actions/comment_actions.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _post_show__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./post_show */ "./frontend/components/posts/post_show.jsx");
+
 
 
 
@@ -1283,6 +1291,7 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
   return {
     post: state.entities.posts[postId],
     posts: Object.values(state.entities.posts),
+    // comments: Object.values(state.entities.comments),
     // comment: state.entities.posts[postId].comment,
     postId: postId
   };
@@ -1295,11 +1304,14 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     deletePost: function deletePost(postId) {
       return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_0__["deletePost"])(postId));
+    },
+    fetchComments: function fetchComments(postId) {
+      return dispatch(Object(_actions_comment_actions__WEBPACK_IMPORTED_MODULE_1__["fetchComments"])(postId));
     }
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, mapDispatchToProps)(_post_show__WEBPACK_IMPORTED_MODULE_3__["default"])));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, mapDispatchToProps)(_post_show__WEBPACK_IMPORTED_MODULE_4__["default"])));
 
 /***/ }),
 
@@ -2159,10 +2171,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createComment", function() { return createComment; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateComment", function() { return updateComment; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteComment", function() { return deleteComment; });
-var fetchComments = function fetchComments() {
+var fetchComments = function fetchComments(post_id) {
   return $.ajax({
     method: 'GET',
-    url: '/api/comments/'
+    url: '/api/comments',
+    data: {
+      comment: {
+        post_id: post_id
+      }
+    }
   });
 }; // export const fetchComment = (commentId) => {
 //     return $.ajax({

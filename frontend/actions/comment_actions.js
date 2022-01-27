@@ -25,15 +25,14 @@ const removeComment = (commentId) => {
     }
 }
 
-export const fetchComments = () => {
+export const fetchComments = (postId) => {
     return (dispatch) => {
-        return CommentAPIUtil.fetchComments().then((comments)=>{
+        return CommentAPIUtil.fetchComments(postId).then((comments)=>{
                 return dispatch(receiveComments(comments))
             }
         );
     }
 }
-
 
 export const createComment = (comment) => {
     return (dispatch) => {
