@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 class CommentIndex extends React.Component {
     constructor(props) {
         super(props)
-        this.state = this.props.posts ? this.props.posts : []
+        this.state = this.props.comments
     }
 
     componentDidMount() {

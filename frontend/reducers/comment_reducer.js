@@ -6,7 +6,7 @@ import {
 
 export default function commentReducer(state = {}, action) {
     Object.freeze(state);
-    let newState = Object.assign({},state);
+    let nextState = Object.assign({},state);
 
     switch (action.type) {
         case RECEIVE_COMMENTS:
@@ -14,10 +14,10 @@ export default function commentReducer(state = {}, action) {
             return nextState;
         case RECEIVE_COMMENT:
             nextState[action.comment.id] = action.comment;
-            return newState;
+            return nextState;
         case REMOVE_COMMENT:
-            delete newState[action.commentId];
-            return newState;
+            delete nextState[action.commentId];
+            return nextState;
         default:
             return state;
     }

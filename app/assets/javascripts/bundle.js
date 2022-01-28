@@ -570,7 +570,7 @@ var CommentIndex = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, CommentIndex);
 
     _this = _super.call(this, props);
-    _this.state = _this.props.posts ? _this.props.posts : [];
+    _this.state = _this.props.comments;
     return _this;
   }
 
@@ -643,8 +643,8 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     fetchPosts: function fetchPosts() {
       return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_1__["fetchPosts"])());
     },
-    fetchComments: function fetchComments() {
-      return dispatch(Object(_actions_comment_actions__WEBPACK_IMPORTED_MODULE_2__["fetchComments"])());
+    fetchComments: function fetchComments(postId) {
+      return dispatch(Object(_actions_comment_actions__WEBPACK_IMPORTED_MODULE_2__["fetchComments"])(postId));
     }
   };
 };
@@ -1220,13 +1220,9 @@ var PostShow = /*#__PURE__*/function (_React$Component) {
   var _super = _createSuper(PostShow);
 
   function PostShow(props) {
-    var _this;
-
     _classCallCheck(this, PostShow);
 
-    _this = _super.call(this, props);
-    _this.state = _this.props.post;
-    return _this;
+    return _super.call(this, props); // this.state = this.props.post;
   }
 
   _createClass(PostShow, [{
@@ -1238,7 +1234,8 @@ var PostShow = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var post = this.props.post; // const comment = this.props.comment;
+      var post = this.props.post;
+      var comment = this.props.comment;
 
       if (!post) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
@@ -1251,7 +1248,7 @@ var PostShow = /*#__PURE__*/function (_React$Component) {
         className: "list-items"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-title"
-      }, post.title, post.comment), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, post.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-body"
       }, post.body), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-title"
@@ -1844,7 +1841,7 @@ function commentReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(state);
-  var newState = Object.assign({}, state);
+  var nextState = Object.assign({}, state);
 
   switch (action.type) {
     case _actions_comment_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_COMMENTS"]:
@@ -1853,11 +1850,11 @@ function commentReducer() {
 
     case _actions_comment_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_COMMENT"]:
       nextState[action.comment.id] = action.comment;
-      return newState;
+      return nextState;
 
     case _actions_comment_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_COMMENT"]:
-      delete newState[action.commentId];
-      return newState;
+      delete nextState[action.commentId];
+      return nextState;
 
     default:
       return state;

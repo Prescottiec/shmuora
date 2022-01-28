@@ -13,7 +13,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         fetchPosts: () => dispatch(fetchPosts()),
-        fetchComments: () => dispatch(fetchComments())
+        fetchComments: (postId) => dispatch(fetchComments(postId))
     }
 }
 

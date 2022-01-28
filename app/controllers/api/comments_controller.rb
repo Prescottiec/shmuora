@@ -2,7 +2,7 @@ class Api::CommentsController < ApplicationController
 
     def index
         # debugger
-        @comments = [Comment.find_by(post_id: comment_params[:post_id]).as_json]
+        @comments = Comment.where(post_id: comment_params[:post_id])
         if @comments
             render :index
         else
