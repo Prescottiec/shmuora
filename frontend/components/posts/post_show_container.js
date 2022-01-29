@@ -9,7 +9,7 @@ const mapStateToProps = (state, ownProps) => {
     return {
         post: state.entities.posts[postId],
         posts: Object.values(state.entities.posts),
-        // comments: Object.values(state.entities.comments),
+        comments: Object.values(state.entities.comments),
         // comment: state.entities.posts[postId].comment,
         postId: postId
     };

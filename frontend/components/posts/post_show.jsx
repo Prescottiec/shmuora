@@ -5,7 +5,7 @@ import CommentForm from "../comments/comment_form";
 class PostShow extends React.Component {
     constructor(props) {
         super(props);
-        // this.state = this.props.post;
+        this.state = this.props.post;
     }
 
     componentDidMount() {
@@ -15,7 +15,7 @@ class PostShow extends React.Component {
 
     render() {
         const post = this.props.post;
-        const comment = this.props.comment;
+        // const comment = this.props.comment;
         if (!post) {
             return(
                 <div></div>

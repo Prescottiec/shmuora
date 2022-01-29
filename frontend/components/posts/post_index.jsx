@@ -1,5 +1,6 @@
 import React from 'react';
 import PostIndexItem from "./post_index_item";
+import CommentIndex from "../comments/comment_index";
 import { Link } from "react-router-dom";
 
 class PostIndex extends React.Component {
@@ -13,19 +14,29 @@ class PostIndex extends React.Component {
 
     render() {
         const posts = this.props.posts;
-        const list = posts.map(post => (
+        const postList = posts.map(post => (
             <PostIndexItem
             post={post}
             key={`${post.id}`}/>
         ));
+
+        const comments = this.props.comments;
+        // const commentList = comments.map(comment => (
+        //     <CommentIndex
+        //     comment={comment}
+        //     key={`${comment.id}`}/>
+        // ));
     
         return(
             <div className="post-index-splash">
                 <div className="post-index-list">
                 <Link to='/postsnew' className="ask-question">Ask a question!</Link>
                     <ul className="post-list">
-                        { list }
+                        { postList }
                     </ul>   
+                    <ul className="post-list">
+                        {/* { commentList } */}
+                    </ul> 
                 </div>
             </div>
         )

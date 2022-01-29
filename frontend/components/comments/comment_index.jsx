@@ -5,11 +5,12 @@ import { Link } from "react-router-dom";
 class CommentIndex extends React.Component {
     constructor(props) {
         super(props)
-        this.state = this.props.comments
+        // this.state = this.props.comments
     }
 
     componentDidMount() {
-        this.props.fetchPosts();
+        this.props.fetchPost(this.props.postId);
+        this.props.fetchComments(this.props.postId);
     }
 
     render() {
@@ -19,7 +20,7 @@ class CommentIndex extends React.Component {
                 <div></div>
             )
         }
-        // console.log(comment);
+    
         // console.log(this.props.posts);
         // const list = comments.map(comment => (
         //     <CommentIndexItem
@@ -30,10 +31,7 @@ class CommentIndex extends React.Component {
         return(
             <div className="post-index-splash">
                 <div className="post-index-list">
-                <Link to='/postsnew' className="ask-question">Ask a question!</Link>
-                    {/* <ul className="post-list"> */}
-                        {/* { list } */}
-                    {/* </ul>    */}
+                    { comment.body }
                 </div>
             </div>
         )

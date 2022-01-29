@@ -1,9 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-// import GitHubIcon from "../../../app/assets/images/github.png";
-// import LinkedInIcon from "../../../app/assets/images/linkedin.png";
-
 class NavBar extends React.Component {
   constructor(props){
     super(props);
@@ -21,7 +18,13 @@ class NavBar extends React.Component {
     return (
       <div className="nav-bar-ui">
         <nav className="nav-bar-buttons"> 
-          <Link className="nav-bar-home" to="/browse">Home</Link>
+          <Link className="nav-bar-logo" to="/browse">Shmuora</Link>
+          {/* <Link className="nav-bar-home" to="/browse">
+            <img src="home_icon.png"/>Home
+          </Link> */}
+          <a href="http://localhost:3000/#/browse" className="home_logo" target="_blank">
+            <img src={window.home_logo}/>
+          </a>
           <a href="https://www.linkedin.com/prescottcarlson" className="linkedin-logo" target="_blank">
             <img src={window.linkedin_logo}/>
           </a>
