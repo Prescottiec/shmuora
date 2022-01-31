@@ -19,12 +19,11 @@ class NavBar extends React.Component {
       <div className="nav-bar-ui">
         <nav className="nav-bar-buttons"> 
           <Link className="nav-bar-logo" to="/browse">Shmuora</Link>
-          {/* <Link className="nav-bar-home" to="/browse">
-            <img src="home_icon.png"/>Home
-          </Link> */}
-          <a href="http://localhost:3000/#/browse" className="home_logo" target="_blank">
-            <img src={window.home_logo}/>
-          </a>
+          <Link to="/browse" className="home_logo">
+            <button>
+              <img src={window.home_logo}/>
+            </button>
+          </Link>
           <a href="https://www.linkedin.com/prescottcarlson" className="linkedin-logo" target="_blank">
             <img src={window.linkedin_logo}/>
           </a>
