@@ -33,6 +33,11 @@
 
 .nav-bar-logo {
     display: block;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    color: rgb(185, 43, 39);
+    font-size: 150%;
+    width: auto;
+    height: auto;
 }
 
 .home_logo {
@@ -42,4 +47,25 @@
     max-height: 35px;
     width: auto;
     height: auto;
+}
+
+.nav-bar-question{
+    display: block;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    color: white;
+    font-size: 150%;
+    width: auto;
+    height: auto;
+}
+
+.nav-bar-question-button{
+    background-color: rgb(185, 43, 39);
+    box-sizing: border-box;
+    font-size: 14px;
+    height: 38px;
+    padding: 0px 20px;
+    position: relative;
+    border-width: 0px;
+    color: #fff;
+    border-radius: 1000px;
 }

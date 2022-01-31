@@ -30,7 +30,7 @@ class PostIndex extends React.Component {
         return(
             <div className="post-index-splash">
                 <div className="post-index-list">
-                <Link to='/postsnew' className="ask-question">Ask a question!</Link>
+                <Link to='/postsnew' className="ask-question">What do you want to ask or share?</Link>
                     <ul className="post-list">
                         { postList }
                     </ul>   

@@ -1,7 +1,7 @@
 .post-index-splash {
     display: flex;
     justify-content: center;
-    background-color: lightgray;
+    background-color: rgb(235, 235, 235);
     height: 94vh;
     overflow: auto;
     flex-wrap: wrap;
@@ -9,9 +9,11 @@
 
 .ask-question {
     display: flex;
-    justify-content: center;
+    // justify-content: center;
     font-family: sans-serif;
-    font-size: 200%;
+    font-size: 120%;
+    font-weight: bold;
+    color: grey;
     background-color: white;
     border: 1px solid rgb(222, 224, 225);
     border-radius: 4px;
@@ -21,12 +23,12 @@
     width: 500px;
     padding-left: 20px;
     padding-right: 20px;
-    padding-top: 15%;
+    padding-top: 5%;
     box-shadow: 0 1px 1px rgba(0,0,0,0.04);
     margin-top: 8px;
-    min-height: 100px;
+    min-height: 50px;
     height: fit-content;
-    padding-bottom: 10px;
+    // padding-bottom: 5%;
 }
 
 .post-index-list {
