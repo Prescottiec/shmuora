@@ -1,21 +1,20 @@
 import React from 'react';
-// import CommentIndexItem from "./comment_index_item";
 import { Link } from "react-router-dom";
 
 class CommentIndex extends React.Component {
     constructor(props) {
         super(props)
-        // this.state = this.props.comments
+        this.state = this.props.comment
     }
 
-    componentDidMount() {
-        this.props.fetchPost(this.props.postId);
-        this.props.fetchComments(this.props.postId);
-    }
+    // componentDidMount() {
+    //     this.props.fetchPost(this.props.postId);
+    //     this.props.fetchComments(this.props.postId);
+    // }
 
     render() {
-        const comments = this.props.comments;
-        if (!comments) {
+        const comment = this.props.comment;
+        if (!comment) {
             return (
                 <div></div>
             )
