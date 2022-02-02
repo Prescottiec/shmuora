@@ -701,7 +701,7 @@ var NavBar = /*#__PURE__*/function (_React$Component) {
         onClick: function onClick() {
           return _this3.handleClick();
         }
-      }, "Sign Out")));
+      }, "Logout")));
     }
   }]);
 

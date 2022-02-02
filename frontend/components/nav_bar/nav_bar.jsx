@@ -33,7 +33,7 @@ class NavBar extends React.Component {
           <Link to='/postsnew' className="nav-bar-question">
             <button className="nav-bar-question-button">Add question</button>
           </Link>
-          <button className="logout-button" onClick={()=>this.handleClick()}>Sign Out</button>
+          <button className="logout-button" onClick={()=>this.handleClick()}>Logout</button>
         </nav>
       </div>  
     )

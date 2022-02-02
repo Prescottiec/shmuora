@@ -2,7 +2,7 @@
     display: block;
     background-color: white;
     box-shadow: 0 3px 6px rgba(230, 228, 228, 0.781);
-    height: 200%;
+    // height: 100%;
 }
 
 .nav-bar-buttons {
@@ -33,6 +33,7 @@
 
 .nav-bar-logo {
     display: block;
+    font-weight: bold;
     font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     color: rgb(185, 43, 39);
     font-size: 150%;
@@ -61,9 +62,25 @@
 .nav-bar-question-button{
     background-color: rgb(185, 43, 39);
     box-sizing: border-box;
-    font-size: 14px;
-    height: 38px;
-    padding: 0px 20px;
+    font-size: 12px;
+    height: 35px;
+    // padding: 0px 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative;
+    border-width: 0px;
+    color: #fff;
+    border-radius: 1000px;
+}
+
+.logout-button{
+    background-color: rgba(153, 153, 153, 0.781);
+    box-sizing: border-box;
+    font-size: 12px;
+    height: 35px;
+    // padding: 0px 20px;
+    padding-left: 20px;
+    padding-right: 20px;
     position: relative;
     border-width: 0px;
     color: #fff;
