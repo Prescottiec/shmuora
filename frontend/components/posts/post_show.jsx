@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import CommentIndex from "../comments/comment_index";
+// import CommentForm from "../comments/comment_form";
 
 class PostShow extends React.Component {
     constructor(props) {
@@ -12,6 +13,15 @@ class PostShow extends React.Component {
         this.props.fetchPost(this.props.postId);
         this.props.fetchComments(this.props.postId);
     }
+
+
+    // handleUpdate(type) {
+    //     return e => {
+    //         this.setState({
+    //             [type]: e.currentTarget.value
+    //         })
+    //     }
+    // }
 
     render() {
         const post = this.props.post;
@@ -35,14 +45,24 @@ class PostShow extends React.Component {
                         <div className="post-body">
                             {post.body}
                         </div>
-                        <div className="post-title">
-                            {commentList}
-                        </div>
-                        <div className="post-title">
-                            {/* <CommentForm/> */}
-                        </div>
                     </div>
+                    {/* <div className="post-title"> */}
+                        {/* <CommentForm/> */}
+                    {/* </div> */}
 
+                    {/* <div className="comment-form">
+                        <textarea className="comment-form-textarea" placeholder="Write your comment" value={this.state.comment.body} onChange={this.handleUpdate("commentBody")}></textarea>                                    
+                        <div className="comment-form-buttons">
+                            <div>
+                                <button className="comment-create-button" onClick={()=>this.handleSubmit()}>Submit</button>
+                            </div>
+                        </div>
+                    </div> */}
+
+                    <ul className="comment-body">
+                        {commentList}
+                    </ul>
+                    
                 </div>
             )
         // if (comments.length === 0) {

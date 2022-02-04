@@ -363,7 +363,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
- // import CommentIndexContainer from './comments/comment_index_container';
 
 
 
@@ -387,10 +386,6 @@ var App = function App() {
     exact: true,
     path: "/posts/:postId",
     component: _posts_post_show_container__WEBPACK_IMPORTED_MODULE_4__["default"]
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_8__["ProtectedRoute"], {
-    exact: true,
-    path: "/posts/:postId/edit",
-    component: _posts_post_form_container__WEBPACK_IMPORTED_MODULE_7__["default"]
   }));
 };
 
@@ -448,11 +443,7 @@ var CommentIndex = /*#__PURE__*/function (_React$Component) {
     _this = _super.call(this, props);
     _this.state = _this.props.comment;
     return _this;
-  } // componentDidMount() {
-  //     this.props.fetchPost(this.props.postId);
-  //     this.props.fetchComments(this.props.postId);
-  // }
-
+  }
 
   _createClass(CommentIndex, [{
     key: "render",
@@ -461,18 +452,12 @@ var CommentIndex = /*#__PURE__*/function (_React$Component) {
 
       if (!comment) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
-      } // console.log(this.props.posts);
-      // const list = comments.map(comment => (
-      //     <CommentIndexItem
-      //     comment={comment}
-      //     key={`${comment.id}`}/>
-      // ));
-
+      }
 
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "post-index-splash"
+        className: "list-items"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "post-index-list"
+        className: "comment-index"
       }, comment.body));
     }
   }]);
@@ -888,12 +873,6 @@ var PostIndex = /*#__PURE__*/function (_React$Component) {
           key: "".concat(post.id)
         });
       });
-      var comments = this.props.comments; // const commentList = comments.map(comment => (
-      //     <CommentIndex
-      //     comment={comment}
-      //     key={`${comment.id}`}/>
-      // ));
-
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-index-splash"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -903,9 +882,7 @@ var PostIndex = /*#__PURE__*/function (_React$Component) {
         className: "ask-question"
       }, "What do you want to ask or share?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "post-list"
-      }, postList), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-        className: "post-list"
-      })));
+      }, postList)));
     }
   }]);
 
@@ -1062,7 +1039,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
-
+ // import CommentForm from "../comments/comment_form";
 
 var PostShow = /*#__PURE__*/function (_React$Component) {
   _inherits(PostShow, _React$Component);
@@ -1084,7 +1061,14 @@ var PostShow = /*#__PURE__*/function (_React$Component) {
     value: function componentDidMount() {
       this.props.fetchPost(this.props.postId);
       this.props.fetchComments(this.props.postId);
-    }
+    } // handleUpdate(type) {
+    //     return e => {
+    //         this.setState({
+    //             [type]: e.currentTarget.value
+    //         })
+    //     }
+    // }
+
   }, {
     key: "render",
     value: function render() {
@@ -1110,11 +1094,9 @@ var PostShow = /*#__PURE__*/function (_React$Component) {
         className: "post-title"
       }, post.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-body"
-      }, post.body), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "post-title"
-      }, commentList), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "post-title"
-      }))); // if (comments.length === 0) {
+      }, post.body)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "comment-body"
+      }, commentList)); // if (comments.length === 0) {
       //     return(
       //         <div className="post-show-page">
       //             <div className="list-items">
@@ -1201,6 +1183,15 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     fetchComments: function fetchComments(postId) {
       return dispatch(Object(_actions_comment_actions__WEBPACK_IMPORTED_MODULE_1__["fetchComments"])(postId));
+    },
+    createComment: function createComment(comment) {
+      return dispatch(Object(_actions_comment_actions__WEBPACK_IMPORTED_MODULE_1__["createComment"])(comment));
+    },
+    updateComment: function updateComment(comment) {
+      return dispatch(Object(_actions_comment_actions__WEBPACK_IMPORTED_MODULE_1__["updateComment"])(comment));
+    },
+    deleteComment: function deleteComment(commentId) {
+      return dispatch(Object(_actions_comment_actions__WEBPACK_IMPORTED_MODULE_1__["deleteComment"])(commentId));
     }
   };
 };

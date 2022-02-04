@@ -19,13 +19,6 @@ class PostIndex extends React.Component {
             post={post}
             key={`${post.id}`}/>
         ));
-
-        const comments = this.props.comments;
-        // const commentList = comments.map(comment => (
-        //     <CommentIndex
-        //     comment={comment}
-        //     key={`${comment.id}`}/>
-        // ));
     
         return(
             <div className="post-index-splash">
@@ -34,9 +27,6 @@ class PostIndex extends React.Component {
                     <ul className="post-list">
                         { postList }
                     </ul>   
-                    <ul className="post-list">
-                        {/* { commentList } */}
-                    </ul> 
                 </div>
             </div>
         )
