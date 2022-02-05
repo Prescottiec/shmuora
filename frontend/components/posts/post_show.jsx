@@ -14,14 +14,13 @@ class PostShow extends React.Component {
         this.props.fetchComments(this.props.postId);
     }
 
-
-    // handleUpdate(type) {
-    //     return e => {
-    //         this.setState({
-    //             [type]: e.currentTarget.value
-    //         })
-    //     }
-    // }
+    handleUpdate(type) {
+        return e => {
+            this.setState({
+                [type]: e.currentTarget.value
+            })
+        }
+    }
 
     render() {
         const post = this.props.post;

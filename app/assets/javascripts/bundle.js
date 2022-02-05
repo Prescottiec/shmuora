@@ -1017,6 +1017,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _comments_comment_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../comments/comment_index */ "./frontend/components/comments/comment_index.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -1061,14 +1063,16 @@ var PostShow = /*#__PURE__*/function (_React$Component) {
     value: function componentDidMount() {
       this.props.fetchPost(this.props.postId);
       this.props.fetchComments(this.props.postId);
-    } // handleUpdate(type) {
-    //     return e => {
-    //         this.setState({
-    //             [type]: e.currentTarget.value
-    //         })
-    //     }
-    // }
+    }
+  }, {
+    key: "handleUpdate",
+    value: function handleUpdate(type) {
+      var _this2 = this;
 
+      return function (e) {
+        _this2.setState(_defineProperty({}, type, e.currentTarget.value));
+      };
+    }
   }, {
     key: "render",
     value: function render() {
