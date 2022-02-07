@@ -454,11 +454,14 @@ var CommentIndex = /*#__PURE__*/function (_React$Component) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
       }
 
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "list-items"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "comment-index"
-      }, comment.body));
+      return (
+        /*#__PURE__*/
+        // <div className="list-items">
+        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "comment-index"
+        }, comment.body) // </div>
+
+      );
     }
   }]);
 
@@ -1098,9 +1101,11 @@ var PostShow = /*#__PURE__*/function (_React$Component) {
         className: "post-title"
       }, post.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-body"
-      }, post.body)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+      }, post.body)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "list-items"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "comment-body"
-      }, commentList)); // if (comments.length === 0) {
+      }, commentList))); // if (comments.length === 0) {
       //     return(
       //         <div className="post-show-page">
       //             <div className="list-items">

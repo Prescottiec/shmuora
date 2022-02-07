@@ -57,10 +57,11 @@ class PostShow extends React.Component {
                             </div>
                         </div>
                     </div> */}
-
-                    <ul className="comment-body">
-                        {commentList}
-                    </ul>
+                    <div className="list-items">
+                        <ul className="comment-body">
+                            {commentList}
+                        </ul>
+                    </div>
                     
                 </div>
             )
