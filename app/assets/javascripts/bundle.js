@@ -1058,6 +1058,8 @@ var PostShow = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call(this, props);
     _this.state = _this.props.post;
+    _this.handleUpdate = _this.handleUpdate.bind(_assertThisInitialized(_this));
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -1079,6 +1081,8 @@ var PostShow = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this3 = this;
+
       var post = this.props.post;
       var comments = this.props.comments;
       var commentList = comments.map(function (comment) {
@@ -1102,45 +1106,19 @@ var PostShow = /*#__PURE__*/function (_React$Component) {
       }, post.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-body"
       }, post.body)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "comment-form"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "comment-form-buttons"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "comment-create-button",
+        onClick: function onClick() {
+          return _this3.handleSubmit();
+        }
+      }, "Submit")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "list-items"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "comment-body"
-      }, commentList))); // if (comments.length === 0) {
-      //     return(
-      //         <div className="post-show-page">
-      //             <div className="list-items">
-      //                 <div className="post-title">
-      //                     {post.title}
-      //                     {/* {comment.body} */}
-      //                 </div>
-      //                 <div className="post-body">
-      //                     {post.body}
-      //                 </div>
-      //                 <p>No comments yet</p>
-      //                 <div className="post-title">
-      //                     {/* <CommentForm/> */}
-      //                 </div>
-      //             </div>
-      //         </div>
-      //     )
-      // } else {
-      //     return(
-      //         <div className="post-show-page">
-      //             <div className="list-items">
-      //                 <div className="post-title">
-      //                     {post.title}
-      //                     {comment.body}
-      //                 </div>
-      //                 <div className="post-body">
-      //                     {post.body}
-      //                 </div>
-      //                 <div className="post-title">
-      //                     {/* <CommentForm/> */}
-      //                 </div>
-      //             </div>
-      //         </div>
-      //     )
-      // };
+      }, commentList)));
     }
   }]);
 

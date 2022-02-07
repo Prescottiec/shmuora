@@ -7,6 +7,9 @@ class PostShow extends React.Component {
     constructor(props) {
         super(props);
         this.state = this.props.post;
+
+        this.handleUpdate = this.handleUpdate.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidMount() {
@@ -49,14 +52,14 @@ class PostShow extends React.Component {
                         {/* <CommentForm/> */}
                     {/* </div> */}
 
-                    {/* <div className="comment-form">
-                        <textarea className="comment-form-textarea" placeholder="Write your comment" value={this.state.comment.body} onChange={this.handleUpdate("commentBody")}></textarea>                                    
+                    <div className="comment-form">
+                        {/* <textarea className="comment-form-textarea" placeholder="Write your comment" value={this.state.comment.body} onChange={this.handleUpdate("body")}></textarea>                                     */}
                         <div className="comment-form-buttons">
                             <div>
                                 <button className="comment-create-button" onClick={()=>this.handleSubmit()}>Submit</button>
                             </div>
                         </div>
-                    </div> */}
+                    </div>
                     <div className="list-items">
                         <ul className="comment-body">
                             {commentList}
@@ -65,44 +68,6 @@ class PostShow extends React.Component {
                     
                 </div>
             )
-        // if (comments.length === 0) {
-        //     return(
-        //         <div className="post-show-page">
-        //             <div className="list-items">
-        //                 <div className="post-title">
-        //                     {post.title}
-        //                     {/* {comment.body} */}
-        //                 </div>
-        //                 <div className="post-body">
-        //                     {post.body}
-        //                 </div>
-        //                 <p>No comments yet</p>
-        //                 <div className="post-title">
-        //                     {/* <CommentForm/> */}
-        //                 </div>
-        //             </div>
-
-        //         </div>
-        //     )
-        // } else {
-        //     return(
-        //         <div className="post-show-page">
-        //             <div className="list-items">
-        //                 <div className="post-title">
-        //                     {post.title}
-        //                     {comment.body}
-        //                 </div>
-        //                 <div className="post-body">
-        //                     {post.body}
-        //                 </div>
-        //                 <div className="post-title">
-        //                     {/* <CommentForm/> */}
-        //                 </div>
-        //             </div>
-
-        //         </div>
-        //     )
-        // };
 
     }
 }
