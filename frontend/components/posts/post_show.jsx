@@ -6,7 +6,12 @@ import CommentIndex from "../comments/comment_index";
 class PostShow extends React.Component {
     constructor(props) {
         super(props);
-        this.state = this.props.post;
+        this.state = {
+            post: null,
+            comment: this.props.comment ? this.props.comment : "",
+            currentUserCommentId: "",
+            commentBody: ""
+        };
 
         this.handleUpdate = this.handleUpdate.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -17,12 +22,52 @@ class PostShow extends React.Component {
         this.props.fetchComments(this.props.postId);
     }
 
-    handleUpdate(type) {
-        return e => {
-            this.setState({
-                [type]: e.currentTarget.value
-            })
-        }
+    handleComments(){
+        this.props.fetchPost(this.props.postId).then(
+            (action) => {
+                let userComment = action.post.comments.find( (comment) => comment.user_id === this.props.currentUserId )
+
+                this.setState(
+                    {
+                        post: action.post,
+                        currentUserCommentId: userComment ? userComment.id : "",
+                        commentBody: userComment ? userComment.body : ""
+                    }
+                );
+            }
+        );
+    }
+
+    handleSubmit(){
+        this.props.createComment(
+            {
+                body: this.state.commentBody,
+                post_id: this.props.postId
+            }
+        ).then(
+            () => {
+                this.handleComments();
+            }
+        )
+    }
+
+    handleCreateComment(){
+        this.props.createComment(
+            {
+                body: this.state.commentBody,
+                post_id: this.props.postId
+            }
+        ).then(
+            () => {
+                this.handleComments();
+            }
+        )
+    }
+
+    handleUpdate(e) {
+        this.setState({
+            comment: e.currentTarget.value
+        })
     }
 
     render() {
@@ -38,6 +83,7 @@ class PostShow extends React.Component {
                 <div></div>
             )
         };
+        // console.log(post);
         return(
                 <div className="post-show-page">
                     <div className="list-items">
@@ -53,7 +99,7 @@ class PostShow extends React.Component {
                     {/* </div> */}
 
                     <div className="comment-form">
-                        {/* <textarea className="comment-form-textarea" placeholder="Write your comment" value={this.state.comment.body} onChange={this.handleUpdate("body")}></textarea>                                     */}
+                        <textarea className="comment-form-textarea" placeholder="Write your comment" value={this.state.comment} onChange={this.handleUpdate}></textarea>                                    
                         <div className="comment-form-buttons">
                             <div>
                                 <button className="comment-create-button" onClick={()=>this.handleSubmit()}>Submit</button>
