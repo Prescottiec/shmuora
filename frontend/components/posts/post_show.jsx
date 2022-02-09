@@ -7,10 +7,9 @@ class PostShow extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            post: null,
+            post: "",
             comment: this.props.comment ? this.props.comment : "",
-            currentUserCommentId: "",
-            commentBody: ""
+            currentUserCommentId: ""
         };
 
         this.handleUpdate = this.handleUpdate.bind(this);
@@ -97,13 +96,11 @@ class PostShow extends React.Component {
                     {/* <div className="post-title"> */}
                         {/* <CommentForm/> */}
                     {/* </div> */}
-
                     <div className="comment-form">
-                        <textarea className="comment-form-textarea" placeholder="Write your comment" value={this.state.comment} onChange={this.handleUpdate}></textarea>                                    
+                        <div className="comment-line"></div>
+                        <input className="comment-form-textarea" placeholder="Write your comment" value={this.state.comment} onChange={this.handleUpdate}></input>                                    
                         <div className="comment-form-buttons">
-                            <div>
-                                <button className="comment-create-button" onClick={()=>this.handleSubmit()}>Submit</button>
-                            </div>
+                            <button className="comment-create-button" onClick={()=>this.handleSubmit()}>Submit</button>
                         </div>
                     </div>
                     <div className="list-items">
