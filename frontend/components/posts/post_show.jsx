@@ -40,7 +40,7 @@ class PostShow extends React.Component {
     handleSubmit(){
         this.props.createComment(
             {
-                body: this.state.commentBody,
+                body: this.state.comment,
                 post_id: this.props.postId
             }
         ).then(
@@ -103,7 +103,7 @@ class PostShow extends React.Component {
                             <button className="comment-create-button" onClick={()=>this.handleSubmit()}>Submit</button>
                         </div>
                     </div>
-                    <div className="list-items">
+                    <div className="comment-list-items">
                         <ul className="comment-body">
                             {commentList}
                         </ul>

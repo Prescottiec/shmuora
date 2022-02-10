@@ -1094,7 +1094,7 @@ var PostShow = /*#__PURE__*/function (_React$Component) {
       var _this3 = this;
 
       this.props.createComment({
-        body: this.state.commentBody,
+        body: this.state.comment,
         post_id: this.props.postId
       }).then(function () {
         _this3.handleComments();
@@ -1164,7 +1164,7 @@ var PostShow = /*#__PURE__*/function (_React$Component) {
           return _this5.handleSubmit();
         }
       }, "Submit"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "list-items"
+        className: "comment-list-items"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "comment-body"
       }, commentList)));

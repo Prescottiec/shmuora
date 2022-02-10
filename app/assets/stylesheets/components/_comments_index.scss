@@ -8,14 +8,31 @@
     font-weight: bold;
 }
 
-// .comment-index-list{
-//     display: flex;
-//     justify-content: center;
-//     flex-direction: column;
-// }
+.comment-list-items{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-family: sans-serif;
+    background-color: white;
+    border: 1px solid rgb(222, 224, 225);
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 1px 1px;
+    margin: 1% auto;
+    padding: 1%;
+    width: 500px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 1px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.04);
+    margin-top: 8px;
+    min-height: 100px;
+    height: fit-content;
+    padding-bottom: 10px;
+}
 
 .comment-index {
     display: flex;
+    flex-direction: column;
     padding-top: 3%;
     font-family: sans-serif;
     font-size: 110%;
