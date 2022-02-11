@@ -16,11 +16,11 @@ class CommentIndex extends React.Component {
         }
     
         return(
-            // <div className="list-items">
+            <div className="list-items">
                 <div className="comment-index">
                     { comment.body }
                 </div>
-            // </div>
+            </div>
         )
     }
 }

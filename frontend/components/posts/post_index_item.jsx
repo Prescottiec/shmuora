@@ -9,6 +9,7 @@ class PostIndexItem extends React.Component {
     
     render() {
         const post = this.props.post;
+        console.log(this.props.edit);
         return(
             <div className="list-items">
                 <div className="post-title">

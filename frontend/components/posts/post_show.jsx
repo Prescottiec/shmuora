@@ -9,11 +9,13 @@ class PostShow extends React.Component {
         this.state = {
             post: "",
             comment: this.props.comment ? this.props.comment : "",
-            currentUserCommentId: ""
+            currentUserCommentId: "",
+            // edit: false
         };
 
         this.handleUpdate = this.handleUpdate.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleEditComment = this.handleEditComment.bind(this);
     }
 
     componentDidMount() {
@@ -22,8 +24,9 @@ class PostShow extends React.Component {
     }
 
     handleComments(){
-        this.props.fetchPost(this.props.postId).then(
+        this.props.fetchComments(this.props.postId).then(
             (action) => {
+                console.log(action.post);
                 let userComment = action.post.comments.find( (comment) => comment.user_id === this.props.currentUserId )
 
                 this.setState(
@@ -33,6 +36,19 @@ class PostShow extends React.Component {
                         commentBody: userComment ? userComment.body : ""
                     }
                 );
+            }
+        );
+    }
+
+    handleEditComment(){
+        this.props.updateComment(
+            {
+                body: this.state.commentBody,
+                id: this.state.currentUserCommentId
+            }
+        ).then(
+            () => {
+                this.handleComments();
             }
         );
     }
@@ -93,11 +109,8 @@ class PostShow extends React.Component {
                             {post.body}
                         </div>
                     </div>
-                    {/* <div className="post-title"> */}
-                        {/* <CommentForm/> */}
-                    {/* </div> */}
+                    <div className="comment-line"></div>
                     <div className="comment-form">
-                        <div className="comment-line"></div>
                         <input className="comment-form-textarea" placeholder="Write your comment" value={this.state.comment} onChange={this.handleUpdate}></input>                                    
                         <div className="comment-form-buttons">
                             <button className="comment-create-button" onClick={()=>this.handleSubmit()}>Submit</button>

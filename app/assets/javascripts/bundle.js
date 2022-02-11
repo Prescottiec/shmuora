@@ -454,14 +454,11 @@ var CommentIndex = /*#__PURE__*/function (_React$Component) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
       }
 
-      return (
-        /*#__PURE__*/
-        // <div className="list-items">
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "comment-index"
-        }, comment.body) // </div>
-
-      );
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "list-items"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "comment-index"
+      }, comment.body));
     }
   }]);
 
@@ -872,6 +869,7 @@ var PostIndex = /*#__PURE__*/function (_React$Component) {
       var posts = this.props.posts;
       var postList = posts.map(function (post) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          edit: true,
           post: post,
           key: "".concat(post.id)
         });
@@ -986,6 +984,7 @@ var PostIndexItem = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       var post = this.props.post;
+      console.log(this.props.edit);
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "list-items"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1058,10 +1057,12 @@ var PostShow = /*#__PURE__*/function (_React$Component) {
     _this.state = {
       post: "",
       comment: _this.props.comment ? _this.props.comment : "",
-      currentUserCommentId: ""
+      currentUserCommentId: "" // edit: false
+
     };
     _this.handleUpdate = _this.handleUpdate.bind(_assertThisInitialized(_this));
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.handleEditComment = _this.handleEditComment.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -1076,7 +1077,8 @@ var PostShow = /*#__PURE__*/function (_React$Component) {
     value: function handleComments() {
       var _this2 = this;
 
-      this.props.fetchPost(this.props.postId).then(function (action) {
+      this.props.fetchComments(this.props.postId).then(function (action) {
+        console.log(action.post);
         var userComment = action.post.comments.find(function (comment) {
           return comment.user_id === _this2.props.currentUserId;
         });
@@ -1089,27 +1091,39 @@ var PostShow = /*#__PURE__*/function (_React$Component) {
       });
     }
   }, {
-    key: "handleSubmit",
-    value: function handleSubmit() {
+    key: "handleEditComment",
+    value: function handleEditComment() {
       var _this3 = this;
 
-      this.props.createComment({
-        body: this.state.comment,
-        post_id: this.props.postId
+      this.props.updateComment({
+        body: this.state.commentBody,
+        id: this.state.currentUserCommentId
       }).then(function () {
         _this3.handleComments();
       });
     }
   }, {
+    key: "handleSubmit",
+    value: function handleSubmit() {
+      var _this4 = this;
+
+      this.props.createComment({
+        body: this.state.comment,
+        post_id: this.props.postId
+      }).then(function () {
+        _this4.handleComments();
+      });
+    }
+  }, {
     key: "handleCreateComment",
     value: function handleCreateComment() {
-      var _this4 = this;
+      var _this5 = this;
 
       this.props.createComment({
         body: this.state.commentBody,
         post_id: this.props.postId
       }).then(function () {
-        _this4.handleComments();
+        _this5.handleComments();
       });
     }
   }, {
@@ -1122,7 +1136,7 @@ var PostShow = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this5 = this;
+      var _this6 = this;
 
       var post = this.props.post;
       var comments = this.props.comments;
@@ -1148,10 +1162,10 @@ var PostShow = /*#__PURE__*/function (_React$Component) {
       }, post.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-body"
       }, post.body)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "comment-form"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "comment-line"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "comment-form"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "comment-form-textarea",
         placeholder: "Write your comment",
         value: this.state.comment,
@@ -1161,7 +1175,7 @@ var PostShow = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "comment-create-button",
         onClick: function onClick() {
-          return _this5.handleSubmit();
+          return _this6.handleSubmit();
         }
       }, "Submit"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "comment-list-items"
