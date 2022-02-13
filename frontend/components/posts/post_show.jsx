@@ -110,12 +110,14 @@ class PostShow extends React.Component {
                         </div>
                     </div>
                     <div className="comment-line"></div>
-                    <div className="comment-form">
-                        <input className="comment-form-textarea" placeholder="Write your comment" value={this.state.comment} onChange={this.handleUpdate}></input>                                    
-                        <div className="comment-form-buttons">
-                            <button className="comment-create-button" onClick={()=>this.handleSubmit()}>Submit</button>
+                    <div className="comment-form-block">
+                        <div className="comment-form">
+                            <input className="comment-form-textarea" placeholder="Write your comment" value={this.state.comment} onChange={this.handleUpdate}></input>                                    
+                            <div className="comment-form-buttons">
+                                <button className="comment-create-button" onClick={()=>this.handleSubmit()}>Submit</button>
+                            </div>
                         </div>
-                    </div>
+                        </div>
                     <div className="comment-list-items">
                         <ul className="comment-body">
                             {commentList}

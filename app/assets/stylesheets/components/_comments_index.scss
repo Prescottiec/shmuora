@@ -45,22 +45,41 @@
     // justify-content: center;
     align-items: center;
     font-family: sans-serif;
-    // flex-direction: column;
-    // background-color: white;
+    flex-direction: column;
+    background-color: white;
     // border: 1px solid rgb(222, 224, 225);
+    // border-radius: 4px;
+    // box-shadow: rgba(0, 0, 0, 0.04) 0px 1px 1px;
+    // // margin: 1% auto;
+    // padding: 1%;
+    // width: 50%;
+    // // padding-left: 20px;
+    // // padding-right: 20px;
+    // // padding-top: 1px;
+    // box-shadow: 0 1px 1px rgba(0,0,0,0.04);
+    // margin-top: 8px;
+    // min-height: 100px;
+    // height: fit-content;
+    // padding-bottom: 10px;
+    border: 1px solid rgb(222, 224, 225);
     border-radius: 4px;
     box-shadow: rgba(0, 0, 0, 0.04) 0px 1px 1px;
-    // margin: 1% auto;
-    padding: 1%;
-    width: 500px;
-    // padding-left: 20px;
-    // padding-right: 20px;
+    margin: 1% auto;
+    // padding: 1%;
+    width: 40%;
+    padding-left: 2%;
+    // padding-right: 1%;
     // padding-top: 1px;
     box-shadow: 0 1px 1px rgba(0,0,0,0.04);
     margin-top: 8px;
     min-height: 100px;
     height: fit-content;
-    // padding-bottom: 10px;
+    padding-bottom: 1%;
+}
+
+.comment-form-block{
+    display: flex;
+    justify-content: center;
 }
 
 
@@ -71,22 +90,22 @@
     // font-family: sans-serif;
     // font-size: 110%;
     // font-weight: bold;
-    font-family: sans-serif;
-    background-color: white;
-    border: 1px solid rgb(222, 224, 225);
-    border-radius: 4px;
-    box-shadow: rgba(0, 0, 0, 0.04) 0px 1px 1px;
-    margin: 1% auto;
-    // padding: 1%;
+    // font-family: sans-serif;
+    // background-color: white;
+    // border: 1px solid rgb(222, 224, 225);
+    // border-radius: 4px;
+    // box-shadow: rgba(0, 0, 0, 0.04) 0px 1px 1px;
+    // margin: 1% auto;
+    // // padding: 1%;
     width: 100%;
-    padding-left: 10%;
-    padding-right: 1%;
-    padding-top: 1px;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.04);
-    margin-top: 8px;
+    // padding-left: 10%;
+    // padding-right: 1%;
+    // padding-top: 1px;
+    // box-shadow: 0 1px 1px rgba(0,0,0,0.04);
+    // margin-top: 8px;
     min-height: 100px;
     height: fit-content;
-    padding-bottom: 10px;
+    // padding-bottom: 10px;
 }
 
 .comment-line {
@@ -102,7 +121,7 @@
 
 .comment-form-buttons {
     display: flex;
-    justify-content: center;
+    // justify-content: center;
 }
 
 .comment-create-button {
