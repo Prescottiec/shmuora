@@ -1063,6 +1063,8 @@ var PostShow = /*#__PURE__*/function (_React$Component) {
     _this.handleUpdate = _this.handleUpdate.bind(_assertThisInitialized(_this));
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.handleEditComment = _this.handleEditComment.bind(_assertThisInitialized(_this));
+    _this.handleDeletePost = _this.handleDeletePost.bind(_assertThisInitialized(_this));
+    _this.handleDeleteComment = _this.handleDeleteComment.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -1070,6 +1072,7 @@ var PostShow = /*#__PURE__*/function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.fetchPost(this.props.postId);
+      this.props.fetchComments(this.props.postId);
       this.props.fetchComments(this.props.postId);
     }
   }, {
@@ -1091,39 +1094,61 @@ var PostShow = /*#__PURE__*/function (_React$Component) {
       });
     }
   }, {
+    key: "handleDeletePost",
+    value: function handleDeletePost() {
+      var _this3 = this;
+
+      this.props.deletePost(this.props.postId).then(function () {
+        _this3.props.history.push("/browse");
+      });
+    }
+  }, {
+    key: "handleDeleteComment",
+    value: function handleDeleteComment() {
+      var _this4 = this;
+
+      this.props.deleteComment(this.state.currentUserCommentId).then(function () {
+        _this4.setState({
+          currentUserCommentId: ""
+        });
+
+        _this4.handleComments();
+      });
+    }
+  }, {
     key: "handleEditComment",
     value: function handleEditComment() {
-      var _this3 = this;
+      var _this5 = this;
 
       this.props.updateComment({
         body: this.state.commentBody,
         id: this.state.currentUserCommentId
       }).then(function () {
-        _this3.handleComments();
+        _this5.handleComments();
       });
     }
   }, {
     key: "handleSubmit",
     value: function handleSubmit() {
-      var _this4 = this;
+      var _this6 = this;
 
       this.props.createComment({
         body: this.state.comment,
         post_id: this.props.postId
       }).then(function () {
-        _this4.handleComments();
+        _this6.handleComments();
       });
     }
   }, {
     key: "handleCreateComment",
     value: function handleCreateComment() {
-      var _this5 = this;
+      var _this7 = this;
 
       this.props.createComment({
         body: this.state.commentBody,
         post_id: this.props.postId
       }).then(function () {
-        _this5.handleComments();
+        _this7.handleComments();
       });
     }
   }, {
@@ -1136,7 +1161,7 @@ var PostShow = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this6 = this;
+      var _this8 = this;
 
       var post = this.props.post;
       var comments = this.props.comments;
@@ -1161,7 +1186,14 @@ var PostShow = /*#__PURE__*/function (_React$Component) {
         className: "post-title"
       }, post.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-body"
-      }, post.body)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, post.body), this.state.post.user_id === this.props.currentUserId ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "delete-button-block"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "post-delete-button",
+        onClick: function onClick() {
+          return _this8.handleDeletePost();
+        }
+      }, "Delete")) : ""), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "comment-line"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "comment-form-block"
@@ -1177,13 +1209,18 @@ var PostShow = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "comment-create-button",
         onClick: function onClick() {
-          return _this6.handleSubmit();
+          return _this8.handleSubmit();
         }
       }, "Submit")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "comment-list-items"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "comment-body"
-      }, commentList)));
+      }, commentList, commentList.user_id === this.props.currentUserId ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "post-delete-button",
+        onClick: function onClick() {
+          return _this8.handleDeleteComment();
+        }
+      }, "Delete")) : "")));
     }
   }]);
 

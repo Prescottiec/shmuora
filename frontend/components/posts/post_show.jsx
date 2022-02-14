@@ -16,10 +16,13 @@ class PostShow extends React.Component {
         this.handleUpdate = this.handleUpdate.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleEditComment = this.handleEditComment.bind(this);
+        this.handleDeletePost = this.handleDeletePost.bind(this);
+        this.handleDeleteComment = this.handleDeleteComment.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchPost(this.props.postId);
+        this.props.fetchComments(this.props.postId);
         this.props.fetchComments(this.props.postId);
     }
 
@@ -38,6 +41,23 @@ class PostShow extends React.Component {
                 );
             }
         );
+    }
+
+    handleDeletePost(){
+        this.props.deletePost(this.props.postId).then(
+            () => {
+                this.props.history.push("/browse");
+            }
+        )
+    }
+
+    handleDeleteComment(){
+        this.props.deleteComment(this.state.currentUserCommentId).then(
+            () => {
+                this.setState({currentUserCommentId: ""});
+                this.handleComments();
+            }
+        )
     }
 
     handleEditComment(){
@@ -108,6 +128,13 @@ class PostShow extends React.Component {
                         <div className="post-body">
                             {post.body}
                         </div>
+                         {
+                            this.state.post.user_id === this.props.currentUserId ? 
+                                <div className="delete-button-block">
+                                    <button className="post-delete-button" onClick={()=>this.handleDeletePost()}>Delete</button>
+                                </div>
+                                : ""
+                        }
                     </div>
                     <div className="comment-line"></div>
                     <div className="comment-form-block">
@@ -121,6 +148,12 @@ class PostShow extends React.Component {
                     <div className="comment-list-items">
                         <ul className="comment-body">
                             {commentList}
+                            {
+                                commentList.user_id === this.props.currentUserId ? <div>
+                                    {/* <button onClick={()}>Edit</button> */}
+                                    <button className="post-delete-button" onClick={()=>this.handleDeleteComment()}>Delete</button>
+                                </div> : ""
+                            }
                         </ul>
                     </div>
                     
