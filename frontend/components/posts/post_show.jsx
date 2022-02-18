@@ -17,12 +17,11 @@ class PostShow extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleEditComment = this.handleEditComment.bind(this);
         this.handleDeletePost = this.handleDeletePost.bind(this);
-        this.handleDeleteComment = this.handleDeleteComment.bind(this);
+        // this.handleDeleteComment = this.handleDeleteComment.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchPost(this.props.postId);
-        this.props.fetchComments(this.props.postId);
         this.props.fetchComments(this.props.postId);
     }
 
