@@ -110,7 +110,8 @@ class PostShow extends React.Component {
         const commentList = comments.map(comment => (
             <CommentIndex
             comment={comment}
-            key={`${comment.id}`}/>
+            key={`${comment.id}`}
+            deleteComment={this.props.deleteComment}/>
         ));
         if (!post) {
             return(

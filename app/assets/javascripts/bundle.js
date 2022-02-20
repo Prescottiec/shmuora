@@ -441,7 +441,11 @@ var CommentIndex = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, CommentIndex);
 
     _this = _super.call(this, props);
-    _this.state = _this.props.comment;
+    _this.state = {
+      post: "",
+      comment: _this.props.comment,
+      currentUserCommentId: ""
+    };
     _this.handleDeleteComment = _this.handleDeleteComment.bind(_assertThisInitialized(_this));
     return _this;
   } // componentDidMount() {
@@ -455,7 +459,8 @@ var CommentIndex = /*#__PURE__*/function (_React$Component) {
     value: function handleDeleteComment() {
       var _this2 = this;
 
-      this.props.deleteComment(this.state.currentUserCommentId).then(function () {
+      console.log("hello", this.state);
+      this.props.deleteComment(this.state.comment.id).then(function () {
         _this2.setState({
           currentUserCommentId: ""
         });
@@ -1210,7 +1215,8 @@ var PostShow = /*#__PURE__*/function (_React$Component) {
       var commentList = comments.map(function (comment) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comments_comment_index__WEBPACK_IMPORTED_MODULE_2__["default"], {
           comment: comment,
-          key: "".concat(comment.id)
+          key: "".concat(comment.id),
+          deleteComment: _this8.props.deleteComment
         });
       });
 

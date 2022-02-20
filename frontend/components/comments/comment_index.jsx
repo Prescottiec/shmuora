@@ -4,7 +4,11 @@ import { Link } from "react-router-dom";
 class CommentIndex extends React.Component {
     constructor(props) {
         super(props)
-        this.state = this.props.comment
+        this.state = {
+            post: "",
+            comment: this.props.comment,
+            currentUserCommentId: ""
+        };
 
         this.handleDeleteComment = this.handleDeleteComment.bind(this);
     }
@@ -15,7 +19,8 @@ class CommentIndex extends React.Component {
     // };
 
     handleDeleteComment(){
-        this.props.deleteComment(this.state.currentUserCommentId).then(
+        console.log("hello", this.state)
+        this.props.deleteComment(this.state.comment.id).then(
             () => {
                 this.setState({currentUserCommentId: ""});
                 this.handleComments();
