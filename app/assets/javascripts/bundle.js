@@ -448,13 +448,14 @@ var CommentIndex = /*#__PURE__*/function (_React$Component) {
     };
     _this.handleDeleteComment = _this.handleDeleteComment.bind(_assertThisInitialized(_this));
     return _this;
-  } // componentDidMount() {
-  //     this.props.fetchPost(this.props.postId);
-  //     this.props.fetchComments(this.props.postId);
-  // };
-
+  }
 
   _createClass(CommentIndex, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {// this.props.fetchPost(this.props.postId);
+      // this.props.fetchComments(this.props.postId);
+    }
+  }, {
     key: "handleDeleteComment",
     value: function handleDeleteComment() {
       var _this2 = this;
@@ -474,7 +475,7 @@ var CommentIndex = /*#__PURE__*/function (_React$Component) {
       var _this3 = this;
 
       this.props.fetchComments(this.props.postId).then(function (action) {
-        console.log(action.post);
+        // console.log(action.post);
         var userComment = action.post.comments.find(function (comment) {
           return comment.user_id === _this3.props.currentUserId;
         });

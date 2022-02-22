@@ -13,10 +13,10 @@ class CommentIndex extends React.Component {
         this.handleDeleteComment = this.handleDeleteComment.bind(this);
     }
 
-    // componentDidMount() {
-    //     this.props.fetchPost(this.props.postId);
-    //     this.props.fetchComments(this.props.postId);
-    // };
+    componentDidMount() {
+        // this.props.fetchPost(this.props.postId);
+        // this.props.fetchComments(this.props.postId);
+    };
 
     handleDeleteComment(){
         console.log("hello", this.state)
@@ -31,7 +31,7 @@ class CommentIndex extends React.Component {
     handleComments(){
         this.props.fetchComments(this.props.postId).then(
             (action) => {
-                console.log(action.post);
+                // console.log(action.post);
                 let userComment = action.post.comments.find( (comment) => comment.user_id === this.props.currentUserId )
 
                 this.setState(
