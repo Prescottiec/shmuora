@@ -111,6 +111,7 @@ class PostShow extends React.Component {
             <CommentIndex
             comment={comment}
             key={`${comment.id}`}
+            fetchComments={this.props.fetchComments}
             deleteComment={this.props.deleteComment}/>
         ));
         if (!post) {

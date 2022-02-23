@@ -446,14 +446,16 @@ var CommentIndex = /*#__PURE__*/function (_React$Component) {
       comment: _this.props.comment,
       currentUserCommentId: ""
     };
+    console.log(_this.props);
     _this.handleDeleteComment = _this.handleDeleteComment.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(CommentIndex, [{
     key: "componentDidMount",
-    value: function componentDidMount() {// this.props.fetchPost(this.props.postId);
-      // this.props.fetchComments(this.props.postId);
+    value: function componentDidMount() {
+      // this.props.fetchPost(this.props.postId);
+      this.props.fetchComments(this.props.postId);
     }
   }, {
     key: "handleDeleteComment",
@@ -1217,6 +1219,7 @@ var PostShow = /*#__PURE__*/function (_React$Component) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comments_comment_index__WEBPACK_IMPORTED_MODULE_2__["default"], {
           comment: comment,
           key: "".concat(comment.id),
+          fetchComments: _this8.props.fetchComments,
           deleteComment: _this8.props.deleteComment
         });
       });
@@ -2233,7 +2236,10 @@ var updateComment = function updateComment(comment) {
 var deleteComment = function deleteComment(commentId) {
   return $.ajax({
     method: "DELETE",
-    url: "api/comments/".concat(commentId)
+    url: "api/comments/".concat(commentId),
+    data: {
+      comment: comment
+    }
   });
 };
 
