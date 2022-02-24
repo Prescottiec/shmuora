@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import CommentIndex from "../comments/comment_index";
+import CommentIndexItem from "../comments/comment_index_item_";
 // import CommentForm from "../comments/comment_form";
 
 class PostShow extends React.Component {
@@ -108,7 +108,7 @@ class PostShow extends React.Component {
         const post = this.props.post;
         const comments = this.props.comments;
         const commentList = comments.map(comment => (
-            <CommentIndex
+            <CommentIndexItem
             comment={comment}
             key={`${comment.id}`}
             fetchComments={this.props.fetchComments}

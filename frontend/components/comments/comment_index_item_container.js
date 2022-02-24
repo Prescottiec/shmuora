@@ -2,7 +2,7 @@ import { fetchPost, deletePost } from "../../actions/post_actions"
 import { fetchComments, createComment, updateComment, deleteComment } from '../../actions/comment_actions';
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import CommentIndex from "./comment_index";
+import CommentIndexItem from "./comment_index_item_";
 
 const mapStateToProps = (state, ownProps) => {
     let postId = ownProps.match.params.postId;
@@ -23,4 +23,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CommentIndex));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CommentIndexItem));

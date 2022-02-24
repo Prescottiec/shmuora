@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-class CommentIndex extends React.Component {
+class CommentIndexItem extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -68,4 +68,4 @@ class CommentIndex extends React.Component {
     }
 }
 
-export default CommentIndex;
+export default CommentIndexItem;

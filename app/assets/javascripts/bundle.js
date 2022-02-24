@@ -393,10 +393,10 @@ var App = function App() {
 
 /***/ }),
 
-/***/ "./frontend/components/comments/comment_index.jsx":
-/*!********************************************************!*\
-  !*** ./frontend/components/comments/comment_index.jsx ***!
-  \********************************************************/
+/***/ "./frontend/components/comments/comment_index_item_.jsx":
+/*!**************************************************************!*\
+  !*** ./frontend/components/comments/comment_index_item_.jsx ***!
+  \**************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -430,15 +430,15 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
-var CommentIndex = /*#__PURE__*/function (_React$Component) {
-  _inherits(CommentIndex, _React$Component);
+var CommentIndexItem = /*#__PURE__*/function (_React$Component) {
+  _inherits(CommentIndexItem, _React$Component);
 
-  var _super = _createSuper(CommentIndex);
+  var _super = _createSuper(CommentIndexItem);
 
-  function CommentIndex(props) {
+  function CommentIndexItem(props) {
     var _this;
 
-    _classCallCheck(this, CommentIndex);
+    _classCallCheck(this, CommentIndexItem);
 
     _this = _super.call(this, props);
     _this.state = {
@@ -451,7 +451,7 @@ var CommentIndex = /*#__PURE__*/function (_React$Component) {
     return _this;
   }
 
-  _createClass(CommentIndex, [{
+  _createClass(CommentIndexItem, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       // this.props.fetchPost(this.props.postId);
@@ -513,10 +513,10 @@ var CommentIndex = /*#__PURE__*/function (_React$Component) {
     }
   }]);
 
-  return CommentIndex;
+  return CommentIndexItem;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (CommentIndex);
+/* harmony default export */ __webpack_exports__["default"] = (CommentIndexItem);
 
 /***/ }),
 
@@ -869,7 +869,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _post_index_item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./post_index_item */ "./frontend/components/posts/post_index_item.jsx");
-/* harmony import */ var _comments_comment_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../comments/comment_index */ "./frontend/components/comments/comment_index.jsx");
+/* harmony import */ var _comments_comment_index_item___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../comments/comment_index_item_ */ "./frontend/components/comments/comment_index_item_.jsx");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -1067,7 +1067,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _comments_comment_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../comments/comment_index */ "./frontend/components/comments/comment_index.jsx");
+/* harmony import */ var _comments_comment_index_item___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../comments/comment_index_item_ */ "./frontend/components/comments/comment_index_item_.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1216,7 +1216,7 @@ var PostShow = /*#__PURE__*/function (_React$Component) {
       var post = this.props.post;
       var comments = this.props.comments;
       var commentList = comments.map(function (comment) {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comments_comment_index__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comments_comment_index_item___WEBPACK_IMPORTED_MODULE_2__["default"], {
           comment: comment,
           key: "".concat(comment.id),
           fetchComments: _this8.props.fetchComments,
