@@ -152,7 +152,7 @@ class PostShow extends React.Component {
                             {
                                 commentList.user_id === this.props.currentUserId ? <div>
                                     {/* <button onClick={()}>Edit</button> */}
-                                    <button className="post-delete-button" onClick={()=>this.handleDeleteComment()}>Delete</button>
+                                    <button className="comment-delete-button" onClick={()=>this.handleDeleteComment()}>Delete</button>
                                 </div> : ""
                             }
                         </ul>

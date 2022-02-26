@@ -141,3 +141,21 @@
     border-radius: 1000px;
     margin-top: 3%;
 }
+
+.comment-delete-button {
+    display: flex;
+    // justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    font-weight: bold;
+    box-sizing: border-box;
+    font-size: 14px;
+    height: 38px;
+    padding: 0px 20px;
+    background-color: rgb(185, 43, 39);
+    // position: relative;
+    border-width: 0px;
+    color: #fff;
+    border-radius: 1000px;
+    margin-top: 3%;
+}
