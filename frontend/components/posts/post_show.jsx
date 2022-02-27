@@ -145,19 +145,18 @@ class PostShow extends React.Component {
                                 <button className="comment-create-button" onClick={()=>this.handleSubmit()}>Submit</button>
                             </div>
                         </div>
-                        </div>
+                    </div>
                     <div className="comment-list-items">
                         <ul className="comment-body">
                             {commentList}
                             {
-                                commentList.user_id === this.props.currentUserId ? <div>
+                                commentList.user_id === this.props.currentUserId ? <div className="delete-button-block">
                                     {/* <button onClick={()}>Edit</button> */}
                                     <button className="comment-delete-button" onClick={()=>this.handleDeleteComment()}>Delete</button>
                                 </div> : ""
                             }
                         </ul>
-                    </div>
-                    
+                    </div>     
                 </div>
             )
 

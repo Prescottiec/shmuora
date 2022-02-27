@@ -58,7 +58,7 @@ class CommentIndexItem extends React.Component {
                 <div className="comment-index">
                     { comment.body }
                     {
-                        comment.user_id === this.props.currentUserId ? <div classname="comment-delete-button">
+                        comment.user_id === this.props.currentUserId ? <div className="delete-button-block">
                             <button className="comment-delete-button" onClick={()=>this.handleDeleteComment()}>Delete</button>
                         </div> : ""
                     }
