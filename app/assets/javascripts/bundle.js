@@ -1116,8 +1116,8 @@ var PostShow = /*#__PURE__*/function (_React$Component) {
     _this.handleUpdate = _this.handleUpdate.bind(_assertThisInitialized(_this));
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.handleEditComment = _this.handleEditComment.bind(_assertThisInitialized(_this));
-    _this.handleDeletePost = _this.handleDeletePost.bind(_assertThisInitialized(_this)); // this.handleDeleteComment = this.handleDeleteComment.bind(this);
-
+    _this.handleDeletePost = _this.handleDeletePost.bind(_assertThisInitialized(_this));
+    _this.handleDeleteComment = _this.handleDeleteComment.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -2240,10 +2240,8 @@ var updateComment = function updateComment(comment) {
 var deleteComment = function deleteComment(commentId) {
   return $.ajax({
     method: "DELETE",
-    url: "api/comments/".concat(commentId),
-    data: {
-      comment: comment
-    }
+    url: "api/comment/".concat(commentId) // data: { commentId }
+
   });
 };
 

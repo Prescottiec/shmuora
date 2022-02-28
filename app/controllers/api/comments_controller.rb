@@ -34,6 +34,7 @@ class Api::CommentsController < ApplicationController
         # debugger
         if @comment.user_id == current_user.id
             @comment.destroy
+            # render "/api/posts/show"
         else
             render json: @comment.errors.full_messages, status: 422
         end
