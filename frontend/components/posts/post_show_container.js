@@ -6,10 +6,12 @@ import PostShow from "./post_show";
 
 const mapStateToProps = (state, ownProps) => {
     let postId = ownProps.match.params.postId;
+    // let commentId = ownProps.match.params.commentId;
     return {
         post: state.entities.posts[postId],
         posts: Object.values(state.entities.posts),
         comments: Object.values(state.entities.comments),
+        // commentId: commentId,
         // comment: state.entities.posts[postId].comment,
         postId: postId
     };

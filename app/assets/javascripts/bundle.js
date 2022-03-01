@@ -1126,6 +1126,7 @@ var PostShow = /*#__PURE__*/function (_React$Component) {
     value: function componentDidMount() {
       this.props.fetchPost(this.props.postId);
       this.props.fetchComments(this.props.postId);
+      this.props.deleteComment(this.props.commentId);
     }
   }, {
     key: "handleComments",
@@ -1308,11 +1309,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
-  var postId = ownProps.match.params.postId;
+  var postId = ownProps.match.params.postId; // let commentId = ownProps.match.params.commentId;
+
   return {
     post: state.entities.posts[postId],
     posts: Object.values(state.entities.posts),
     comments: Object.values(state.entities.comments),
+    // commentId: commentId,
     // comment: state.entities.posts[postId].comment,
     postId: postId
   };
@@ -2192,12 +2195,13 @@ var configureStore = function configureStore() {
 /*!*******************************************!*\
   !*** ./frontend/util/comment_api_util.js ***!
   \*******************************************/
-/*! exports provided: fetchComments, createComment, updateComment, deleteComment */
+/*! exports provided: fetchComments, fetchComment, createComment, updateComment, deleteComment */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchComments", function() { return fetchComments; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchComment", function() { return fetchComment; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createComment", function() { return createComment; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateComment", function() { return updateComment; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteComment", function() { return deleteComment; });
@@ -2211,14 +2215,16 @@ var fetchComments = function fetchComments(post_id) {
       }
     }
   });
-}; // export const fetchComment = (commentId) => {
-//     return $.ajax({
-//         method: 'GET',
-//         url: `/api/comments/${commentId}`,
-//         data: { commentId }
-//     })
-// }
-
+};
+var fetchComment = function fetchComment(commentId) {
+  return $.ajax({
+    method: 'GET',
+    url: "/api/comments/".concat(commentId),
+    data: {
+      commentId: commentId
+    }
+  });
+};
 var createComment = function createComment(comment) {
   return $.ajax({
     method: "POST",
@@ -2240,8 +2246,10 @@ var updateComment = function updateComment(comment) {
 var deleteComment = function deleteComment(commentId) {
   return $.ajax({
     method: "DELETE",
-    url: "api/comment/".concat(commentId) // data: { commentId }
-
+    url: "api/comments/".concat(commentId),
+    data: {
+      commentId: commentId
+    }
   });
 };
 

@@ -6,13 +6,13 @@ export const fetchComments = (post_id) => (
     })
 )
 
-// export const fetchComment = (commentId) => {
-//     return $.ajax({
-//         method: 'GET',
-//         url: `/api/comments/${commentId}`,
-//         data: { commentId }
-//     })
-// }
+export const fetchComment = (commentId) => {
+    return $.ajax({
+        method: 'GET',
+        url: `/api/comments/${commentId}`,
+        data: { commentId }
+    })
+}
 
 export const createComment = (comment) => {
     return $.ajax({
@@ -33,7 +33,7 @@ export const updateComment = (comment) => {
 export const deleteComment = (commentId) => {
     return $.ajax({
         method: "DELETE",
-        url: `api/comment/${commentId}`,
-        // data: { commentId }
+        url: `api/comments/${commentId}`,
+        data: { commentId }
     })
 }
