@@ -30,8 +30,8 @@ class Api::CommentsController < ApplicationController
     end
 
     def destroy
-        @comment = Comment.includes(:post, :user).find(params[:id])
         # debugger
+        @comment = Comment.includes(:post, :user).find(params[:id])
         if @comment.user_id == current_user.id
             @comment.destroy
             # render "/api/posts/show"
