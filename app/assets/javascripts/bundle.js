@@ -2305,7 +2305,10 @@ var updatePost = function updatePost(post) {
 var deletePost = function deletePost(postId) {
   return $.ajax({
     method: "DELETE",
-    url: "api/posts/".concat(postId)
+    url: "api/posts/".concat(postId),
+    data: {
+      postId: postId
+    }
   });
 };
 
