@@ -5,6 +5,15 @@
     <%= favicon_link_tag asset_path('favicon.png') %>
     <%= csrf_meta_tags %>
 
+    <meta property="og:title" content="Shmuora" />
+    <meta property='og:image' content="<%= image_url('shmuora_linkedin.png') %>"/>
+    <meta property="og:description"
+      content="Shmuora is a full-stack clone of Quora built with the Rails-React-Redux stack. Users can signup, login, logout, post, comment, delete their posts and comments."
+    />
+    <meta property="og:url"
+      content="http://shmuora.herokuapp.com/"
+    />
+
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <script type="text/javascript">
