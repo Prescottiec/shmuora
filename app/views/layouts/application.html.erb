@@ -3,8 +3,6 @@
   <head>
     <title>Shmuora - A place to share knowledge and better understand the world.</title>
     <%= favicon_link_tag asset_path('favicon.png') %>
-    <%= csrf_meta_tags %>
-
     <meta property="og:title" content="Shmuora" />
     <meta property='og:image' content="<%= image_url('shmuora_linkedin.png') %>"/>
     <meta property="og:description"
@@ -13,6 +11,8 @@
     <meta property="og:url"
       content="http://shmuora.herokuapp.com/"
     />
+    <%= csrf_meta_tags %>
+
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
