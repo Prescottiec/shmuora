@@ -8,19 +8,12 @@ class CommentForm extends React.Component {
         this.handleUpdate = this.handleUpdate.bind(this);
     }
 
-    componentDidMount() {
-        // if (this.props.isEdit) {
-        //     this.props.fetchPost(this.props.postId);
-        // }
-    }
-
     handleSubmit(e) {
         // e.preventDefault();
         if (this.props.isEdit) {
             this.props.updateComment(this.state);
         }
         else {
-            // console.log(this.state);
             this.props.createComment(this.state).then(() => {
                 this.props.history.push("/browse")
             })

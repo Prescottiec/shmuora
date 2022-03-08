@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import CommentIndexItem from "../comments/comment_index_item_";
-// import CommentForm from "../comments/comment_form";
 
 class PostShow extends React.Component {
     constructor(props) {
@@ -10,21 +9,17 @@ class PostShow extends React.Component {
             post: "",
             comment: this.props.comment ? this.props.comment : "",
             currentUserCommentId: "",
-            // edit: false
         };
 
         this.handleUpdate = this.handleUpdate.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleEditComment = this.handleEditComment.bind(this);
         this.handleDeletePost = this.handleDeletePost.bind(this);
-        this.handleDeleteComment = this.handleDeleteComment.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchPost(this.props.postId);
         this.props.fetchComments(this.props.postId);
-        this.props.deleteComment(this.props.commentId);
-
     }
 
     handleComments(){
@@ -48,15 +43,6 @@ class PostShow extends React.Component {
         this.props.deletePost(this.props.postId).then(
             () => {
                 this.props.history.push("/browse");
-            }
-        )
-    }
-
-    handleDeleteComment(){
-        this.props.deleteComment(this.state.currentUserCommentId).then(
-            () => {
-                this.setState({currentUserCommentId: ""});
-                this.handleComments();
             }
         )
     }
@@ -121,7 +107,7 @@ class PostShow extends React.Component {
                 <div></div>
             )
         };
-        // console.log(post);
+        
         return(
                 <div className="post-show-page">
                     <div className="list-items">
@@ -151,12 +137,6 @@ class PostShow extends React.Component {
                     <div className="comment-list-items">
                         <ul className="comment-body">
                             {commentList}
-                            {
-                                commentList.user_id === this.props.currentUserId ? <div className="delete-button-block">
-                                    {/* <button onClick={()}>Edit</button> */}
-                                    <button className="comment-delete-button" onClick={()=>this.handleDeleteComment()}>Delete</button>
-                                </div> : ""
-                            }
                         </ul>
                     </div>     
                 </div>
