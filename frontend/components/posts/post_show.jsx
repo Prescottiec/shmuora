@@ -13,7 +13,7 @@ class PostShow extends React.Component {
 
         this.handleUpdate = this.handleUpdate.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleEditComment = this.handleEditComment.bind(this);
+        // this.handleEditComment = this.handleEditComment.bind(this);
         this.handleDeletePost = this.handleDeletePost.bind(this);
     }
 
@@ -47,18 +47,18 @@ class PostShow extends React.Component {
         )
     }
 
-    handleEditComment(){
-        this.props.updateComment(
-            {
-                body: this.state.commentBody,
-                id: this.state.currentUserCommentId
-            }
-        ).then(
-            () => {
-                this.handleComments();
-            }
-        );
-    }
+    // handleEditComment(){
+    //     this.props.updateComment(
+    //         {
+    //             body: this.state.commentBody,
+    //             id: this.state.currentUserCommentId
+    //         }
+    //     ).then(
+    //         () => {
+    //             this.handleComments();
+    //         }
+    //     );
+    // }
 
     handleSubmit(){
         this.props.createComment(
